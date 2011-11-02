@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>Showjo</title>
+  <%= stylesheet_link_tag "http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css" %>
+  <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :head %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <%= link_to "Showjo", root_url, :class => "brand" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
