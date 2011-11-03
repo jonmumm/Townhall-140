@@ -1,0 +1,10 @@
+<% if (app.get('is_moderator')) { %>
+  <button class="btn success large startShowBtn" disabled="disabled">Start Show</button>
+  <button class="btn danger large stopShowBtn" disabled="disabled">Stop Show</button>
+<% } else { %>
+  <button class="btn success large joinShowBtn" disabled="disabled">Join Show</button>
+  <button class="btn danger large leaveShowBtn" disabled="disabled">Leave Show</button>
+<% } %>
+
+<h2>Invite Others</h2>
+<p>Share this page to invite others to be a part of the show.</p>

@@ -7,7 +7,7 @@ class ShowsController < ApplicationController
   def show
     @show = Show.find(params[:id])
 
-    if session[@show.session_id]
+    if @show.user_id == session[:user_id]
       role = OpenTok::RoleConstants::MODERATOR
       @moderator = true
     else

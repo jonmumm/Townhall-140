@@ -3,3 +3,7 @@ Showjo.Views.AppView = Backbone.View.extend
 
   render: ->
     @el.html @template
+
+    panelView = new Showjo.Views.PanelView
+      el: $(".panel", @el)
+    panelView.render()
