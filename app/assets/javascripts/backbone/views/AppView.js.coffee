@@ -7,3 +7,7 @@ Showjo.Views.AppView = Backbone.View.extend
     panelView = new Showjo.Views.PanelView
       el: $(".panel", @el)
     panelView.render()
+
+    stageView = new Showjo.Views.StageView
+      el: $(".stage", @el)
+      collection: app.get('participants')
