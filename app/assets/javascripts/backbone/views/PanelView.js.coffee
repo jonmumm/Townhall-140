@@ -1,8 +1,15 @@
 Showjo.Views.PanelView = Backbone.View.extend
+  initialize: ->
+    app.get('session').addEventListener 'sessionConnected', @onSessionConnect
+
   template: JST["backbone/templates/panel"]
 
   render: ->
     @el.html @template
+
+  onSessionConnect: ->
+    $(".startShowBtn").removeAttr 'disabled'
+    $(".joinShowBtn").removeAttr 'disabled'
 
   events:
     "click .startShowBtn": "onStartShowClick"
