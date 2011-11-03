@@ -2,7 +2,7 @@ require 'opentok'
 
 class ShowsController < ApplicationController
   before_filter :require_login, :only => [:new, :create]
-  before_filter :init_opentok, :only => [:new, :create]
+  before_filter :init_opentok, :only => [:show, :create]
 
   def show
     @show = Show.find(params[:id])
