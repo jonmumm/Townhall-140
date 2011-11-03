@@ -6,6 +6,16 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find(params[:id])
+
+    if session[@show.sessionId] or @show.archiveId
+      role = OpenTok::RoleConstants::MODERATOR
+      @moderator = true
+    else
+      role = OpenTok::RoleConstants::PUBLISHER
+      @moderator = false
+    end
+
+    @token = @opentok.generate_token :session_id => @show.session_id, :role => role
   end
 
   def new
