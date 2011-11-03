@@ -20,6 +20,7 @@ Showjo.Views.PanelView = Backbone.View.extend
   onStartShowClick: ->
     $(document).trigger 'startShow'
     $(".startShowBtn").attr 'disabled', 'disabled'
+    $(".stopShowBtn").removeAttr 'disabled'
 
   onStopShowClick: ->
     $(document).trigger 'stopShow'
@@ -28,6 +29,7 @@ Showjo.Views.PanelView = Backbone.View.extend
   onJoinShowClick: ->
     $(document).trigger 'joinShow'
     $(".joinShowBtn").attr 'disabled', 'disabled'
+    $(".leaveShowBtn").removeAttr 'disabled'
 
   onLeaveShowClick: ->
     $(document).trigger 'leaveShow'
