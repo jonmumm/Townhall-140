@@ -3,3 +3,25 @@ Showjo.Views.PanelView = Backbone.View.extend
 
   render: ->
     @el.html @template
+
+  events:
+    "click .startShowBtn": "onStartShowClick"
+    "click .stopShowBtn": "onStopShowClick"
+    "click .joinShowBtn": "onJoinShowClick"
+    "click .leaveShowBtn": "onLeaveShowClick"
+
+  onStartShowClick: ->
+    $(document).trigger 'startShow'
+    $(".startShowBtn").attr 'disabled', 'disabled'
+
+  onStopShowClick: ->
+    $(document).trigger 'stopShow'
+    $(".stopShowBtn").attr 'disabled', 'disabled'
+
+  onJoinShowClick: ->
+    $(document).trigger 'joinShow'
+    $(".joinShowBtn").attr 'disabled', 'disabled'
+
+  onLeaveShowClick: ->
+    $(document).trigger 'leaveShow'
+    $(".leaveShowBtn").attr 'disabled', 'disabled'
