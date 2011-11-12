@@ -1,5 +1,5 @@
 TownHall140::Application.routes.draw do
-  root :to => "main#index"
+  root :to => "main#splash"
 
   get "shows" => "main#index"
 
