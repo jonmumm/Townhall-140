@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Gov140::Application.load_tasks
+TownHall140::Application.load_tasks

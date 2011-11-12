@@ -1,4 +1,4 @@
-Gov140.Collections.ParticipantCollection = Backbone.Collection.extend
+TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
   initialize: ->
     $(document).bind 'startShow', $.proxy @onStartShow, @
     $(document).bind 'joinShow', $.proxy @onJoinShow, @
@@ -6,13 +6,13 @@ Gov140.Collections.ParticipantCollection = Backbone.Collection.extend
     app.get('session').addEventListener 'sessionConnected', $.proxy @onSessionConnect, @
     app.get('session').addEventListener 'streamCreated', $.proxy @onStreamCreate, @
 
-  model: Gov140.Models.Participant
+  model: TownHall140.Models.Participant
 
   onStartShow: ->
-    @add new Gov140.Models.Participant
+    @add new TownHall140.Models.Participant
 
   onJoinShow: ->
-    @add new Gov140.Models.Participant
+    @add new TownHall140.Models.Participant
 
   onSessionConnect: (event) ->
     for stream in event.streams
@@ -24,7 +24,7 @@ Gov140.Collections.ParticipantCollection = Backbone.Collection.extend
 
   addParticipant: (stream) ->
     if stream.connection.connectionId isnt app.get('session').connection.connectionId
-      @add new Gov140.Models.Participant
+      @add new TownHall140.Models.Participant
         id: stream.streamId
         stream: stream
         state: "queue"

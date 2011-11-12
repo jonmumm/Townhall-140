@@ -1,4 +1,4 @@
-Gov140.Views.ParticipantView = Backbone.View.extend
+TownHall140.Views.ParticipantView = Backbone.View.extend
   template: JST["backbone/templates/participant"]
 
   render: ->
