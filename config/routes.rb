@@ -1,5 +1,7 @@
 TownHall140::Application.routes.draw do
-  root :to => "main#splash"
+  root :to => "main#index"
+
+  get "shows" => "main#index"
 
   get "shows/new" => "shows#new", :as => :new_show
   get "shows/:id" => "shows#show", :as => :show
