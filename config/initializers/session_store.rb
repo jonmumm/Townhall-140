@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Showjo::Application.config.session_store :cookie_store, :key => '_Showjo_session'
+Gov140::Application.config.session_store :cookie_store, :key => '_Gov140_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Showjo::Application.config.session_store :active_record_store
+# Gov140::Application.config.session_store :active_record_store

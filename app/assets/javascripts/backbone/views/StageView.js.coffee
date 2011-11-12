@@ -1,4 +1,4 @@
-Showjo.Views.StageView = Backbone.View.extend
+Gov140.Views.StageView = Backbone.View.extend
   initialize: ->
     @collection.bind 'add', $.proxy @onParticipantAdd, @
     @collection.bind 'remove', $.proxy @onParticipantRemove, @
@@ -7,7 +7,7 @@ Showjo.Views.StageView = Backbone.View.extend
     participantEl = $(@make "div", { id: model.get('id'), class: model.get('state') } )
     participantEl.appendTo @el
 
-    participantView = new Showjo.Views.ParticipantView
+    participantView = new Gov140.Views.ParticipantView
       el: participantEl
       model: model
     participantView.render()

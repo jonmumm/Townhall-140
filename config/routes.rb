@@ -1,4 +1,4 @@
-Showjo::Application.routes.draw do
+Gov140::Application.routes.draw do
   root :to => "main#index"
 
   get "shows/new" => "shows#new", :as => :new_show

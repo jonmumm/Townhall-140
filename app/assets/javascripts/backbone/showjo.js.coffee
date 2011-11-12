@@ -4,7 +4,7 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-window.Showjo =
+window.Gov140 =
   Models: {}
   Collections: {}
   Routers: {}

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Showjo::Application.load_tasks
+Gov140::Application.load_tasks

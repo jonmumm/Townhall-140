@@ -1,4 +1,4 @@
-Showjo.Views.PanelView = Backbone.View.extend
+Gov140.Views.PanelView = Backbone.View.extend
   initialize: ->
     app.get('session').addEventListener 'sessionConnected', @onSessionConnect
 
