@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gov140</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield :head %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+  <%= yield %>
+
+
+</body>
+</html>

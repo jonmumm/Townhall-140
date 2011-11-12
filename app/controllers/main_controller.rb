@@ -8,4 +8,8 @@ class MainController < ApplicationController
     end
   end
 
+  def splash
+    render :layout => 'landing'
+  end
+
 end

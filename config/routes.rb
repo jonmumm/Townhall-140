@@ -1,5 +1,5 @@
 Gov140::Application.routes.draw do
-  root :to => "main#index"
+  root :to => "main#splash"
 
   get "shows/new" => "shows#new", :as => :new_show
   get "shows/:id" => "shows#show", :as => :show
