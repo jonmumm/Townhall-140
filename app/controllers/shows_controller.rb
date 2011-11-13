@@ -35,7 +35,7 @@ class ShowsController < ApplicationController
 
   private
   def init_opentok
-    @opentok = OpenTok::OpenTokSDK.new APP_CONFIG['opentok_api_key'], APP_CONFIG['opentok_api_secret']
+    @opentok = OpenTok::OpenTokSDK.new APP_CONFIG['opentok_api_key'], APP_CONFIG['opentok_api_secret'], :api_url => "https://api.opentok.com/hl"
   end
 
   def generate_token(role)
