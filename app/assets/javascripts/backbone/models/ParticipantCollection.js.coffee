@@ -3,7 +3,7 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
     $(document).bind 'startShow', $.proxy @onStartShow, @
     $(document).bind 'stopShow', $.proxy @onStopShow, @
     $(document).bind 'joinShow', $.proxy @onJoinShow, @
-    $(docuemnt).bind 'leaveShow', $.proxy @onLeaveShow, @
+    $(document).bind 'leaveShow', $.proxy @onLeaveShow, @
     $(document).bind 'remove', $.proxy @onRemove, @
 
     app.get('session').addEventListener 'sessionConnected', $.proxy @onSessionConnect, @
