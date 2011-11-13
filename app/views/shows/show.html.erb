@@ -1,5 +1,4 @@
 <% content_for :head do %>
-  <%= stylesheet_link_tag    "show" %>
   <%= javascript_include_tag "http://staging.tokbox.com/v0.91/js/TB.min.js" %>
   <%= javascript_include_tag "http://js.pusherapp.com/1.9/pusher.min.js" %>
   <%= javascript_include_tag "http://widgets.twimg.com/j/2/widget.js" %>
@@ -24,7 +23,7 @@ show_id: <%= @show.id %>,
 
 <div class="header">
   <h1>Townhall <span>140</span></h1>
-  <h2>Face time with movers and shakers</h2>
+  <h2>Face to face on issues that matter</h2>
 </div>
 
 <% if @moderator %>
@@ -42,7 +41,7 @@ show_id: <%= @show.id %>,
               type: 'search',
               search: 'occupyharvard',
               interval: 30000,
-              title: 'Town hall with Trey Greyson',
+              title: 'Town hall with Trey Grayson',
               subject: 'Discuss #occupyharvard',
               width: "100%",
               theme: {
@@ -69,7 +68,7 @@ show_id: <%= @show.id %>,
       </div>
       <div class="span11 stage">
         <div class="hall-title">
-          <h3>Discuss <span class="hash">#occupyharvard</span> with <span class="speaker">Trey Greyson</span></h3>
+          <h3>Discuss <span class="hash">#occupyharvard</span> with <span class="speaker">Trey Grayson</span></h3>
           <h4>Starting at 5:00 PM EST</h4>
         </div>
         <div class="host placeholder participant">
