@@ -23,11 +23,11 @@ class EventController < ApplicationController
     host = Event.where(:show_id => params[:show_id], :state => "host").order("created_at DESC").limit(1)
 
     response = [ ]
-    if guest
-      response << guest
+    if guest[0]
+      response << guest[0]
     end
-    if host
-      response << host
+    if host[0]
+      response << host[0]
     end
 
     render :json => response
