@@ -1,11 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    if logged_in?
-      redirect_to :new_show
-    else
-      render
-    end
+    redirect_to "/shows/11"
   end
 
   def splash
