@@ -19,9 +19,18 @@ class EventController < ApplicationController
   end
 
   def current
-    @current = Event.where(:show_id => params[:show_id]).group("state").where("state = 'guest' OR state = 'host'")
+    guest = Event.where(:show_id => params[:show_id], :state => "guest").order("created_at DESC").limit(1)
+    host = Event.where(:show_id => params[:show_id], :state => "host").order("created_at DESC").limit(1)
 
-    render :json => @current
+    response = [ ]
+    if guest
+      response << guest
+    end
+    if host
+      response << host
+    end
+
+    render :json => response
   end
 
 end
