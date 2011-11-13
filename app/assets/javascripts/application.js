@@ -11,3 +11,4 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/showjo
+//= require shows
