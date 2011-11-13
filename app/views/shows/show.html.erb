@@ -17,6 +17,18 @@ show_id: <%= @show.id %>,
          pusher: new Pusher("<%= APP_CONFIG['pusher_key'] %>")
     }
 
+    $(document).ready(function() {
+      window.app = new TownHall140.Models.App(app_config);
+      app.setup();
+
+      var view = new TownHall140.Views.AppView({
+        model: app,
+        el: $(".app")
+      });
+      view.render();
+      view.start();
+    })
+
   </script>
 <% end %>
 
