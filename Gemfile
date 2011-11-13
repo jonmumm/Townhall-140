@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'pusher'
 
 gem 'omniauth'
 gem 'opentok'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TownHall140</title>
+  <title>Townhall 140</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= yield :head %>
@@ -9,17 +9,8 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="fill">
-      <div class="container">
-        <%= link_to "TownHall140", root_url, :class => "brand" %>
-      </div>
-    </div>
-  </div>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+  <%= yield %>
 
 
 </body>

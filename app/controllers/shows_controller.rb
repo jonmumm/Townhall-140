@@ -1,21 +1,21 @@
 require 'opentok'
 
 class ShowsController < ApplicationController
-  before_filter :require_login, :only => [:new, :create]
-  before_filter :init_opentok, :only => [:show, :create]
+  before_filter :authenticate, :only => [:admin]
+  before_filter :init_opentok, :only => [:show, :create, :admin]
 
   def show
     @show = Show.find(params[:id])
 
-    if @show.user_id == session[:user_id]
-      role = OpenTok::RoleConstants::MODERATOR
-      @moderator = true
-    else
-      role = OpenTok::RoleConstants::PUBLISHER
-      @moderator = false
-    end
+    @token = generate_token OpenTok::RoleConstants::PUBLISHER
+    @moderator = false
+  end
 
-    @token = @opentok.generate_token :session_id => @show.session_id, :role => role
+  def admin
+    @token = generate_token OpenTok::RoleConstants::MODERATOR
+    @moderator = true
+
+    render 'show'
   end
 
   def new
@@ -25,10 +25,9 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(params[:show])
     @show.session_id = @opentok.create_session.to_s
-    @show.user_id = @_current_user.id
 
     if @show.save
-      redirect_to @show
+      redirect_to "/shows/#{@show.id}/admin"
     else
       render :action => "new"
     end
@@ -37,5 +36,19 @@ class ShowsController < ApplicationController
   private
   def init_opentok
     @opentok = OpenTok::OpenTokSDK.new APP_CONFIG['opentok_api_key'], APP_CONFIG['opentok_api_secret']
+  end
+
+  def generate_token(role)
+    @opentok.generate_token :session_id => @show.session_id, :role => role
+  end
+
+  def authenticate
+    @show = Show.find(params[:id])
+
+    authenticate_or_request_with_http_basic do |username, password|
+      username == @show.admin_name && password == @show.admin_password
+    end
+
+    session[:user_id] = @show.admin_name
   end
 end

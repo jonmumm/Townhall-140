@@ -6,6 +6,21 @@
  *= require_self
 */
 
+html, body {
+  height: 100%;
+}
+
 body {
   padding-top: 60px;
+  background: url('/assets/bg.jpg');
+}
+
+a {
+  .red-btn {
+
+  }
+
+  .green-btn {
+
+  }
 }

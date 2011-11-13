@@ -2,3 +2,6 @@ twitter_consumer_key: BzT8BAHK9N81hM1pj18kw
 twitter_consumer_secret: M1Z2wW0Z2O0webyYmYDzq04sljzJa0p4WTZCtSsLVY
 opentok_api_key: 6701761
 opentok_api_secret: 7a74e865b9c3e576673cf507f146765eaa836285
+pusher_app_id: 10837
+pusher_key: 86f0e61e3c2a0c2a7d56
+pusher_secret: cbc09079a155dea87a6a

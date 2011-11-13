@@ -1,22 +1,89 @@
 <% content_for :head do %>
+  <%= stylesheet_link_tag    "show" %>
   <%= javascript_include_tag "http://staging.tokbox.com/v0.91/js/TB.min.js" %>
+  <%= javascript_include_tag "http://js.pusherapp.com/1.9/pusher.min.js" %>
+  <%= javascript_include_tag "http://widgets.twimg.com/j/2/widget.js" %>
+  <%= javascript_include_tag "http://twitter.github.com/bootstrap/1.3.0/bootstrap-modal.js" %>
   <script type="text/javascript">
 
     window.app_config = {
-      show_id: <%= @show.id %>,
-      is_moderator: <%= @moderator %>,
+show_id: <%= @show.id %>,
+         is_moderator: <%= @moderator %>,
 
-      session: TB.initSession("<%= @show.session_id %>"),
+         session: TB.initSession("<%= @show.session_id %>"),
 
-      opentok_api_key: <%= APP_CONFIG['opentok_api_key'] %>,
-      opentok_token: "<%= @token %>"
+         opentok_api_key: <%= APP_CONFIG['opentok_api_key'] %>,
+         opentok_token: "<%= @token %>",
+
+         pusher: new Pusher("<%= APP_CONFIG['pusher_key'] %>")
     }
 
-  </script>
-  <%= javascript_include_tag "shows" %>
+</script>
+<%= javascript_include_tag "shows" %>
 <% end %>
 
-<div class="page-header">
-  <h1><%= @show.title %></h1>
+<div class="header">
+  <h1>Townhall <span>140</span></h1>
+  <h2>Face time with movers and shakers</h2>
 </div>
-<div class="app row"></div>
+
+<% if @moderator %>
+<div class="main moderator">
+<% else %>
+<div class="main non-moderator">
+<% end %>
+  <div class="container">
+    <div class="row">
+      <div class="span5 sidebar">
+        <div class="twitter">
+          <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'search',
+              search: 'occupyharvard',
+              interval: 30000,
+              title: 'Town hall with Trey Greyson',
+              subject: 'Discuss #occupyharvard',
+              width: "100%",
+              theme: {
+                shell: {
+                  background: 'rgba(0,0,0,.0)',
+                  color: '#ffffff'
+                },
+                tweets: {
+                  color: '#444444',
+                  links: '#1985b5'
+                }
+              },
+              features: {
+                scrollbar: false,
+                loop: true,
+                live: true,
+                behavior: 'default'
+              }
+            }).render().start();
+          </script>
+        </div>
+        <div class="panel">
+        </div>
+      </div>
+      <div class="span11 stage">
+        <div class="hall-title">
+          <h3>Discuss <span class="hash">#occupyharvard</span> with <span class="speaker">Trey Greyson</span></h3>
+          <h4>Starting at 5:00 PM EST</h4>
+        </div>
+        <div class="host placeholder participant">
+          <div class="participant-wrapper">
+            <h3>Trey Grayson</h3>
+            <div class="video"></div>
+          </div>
+        </div>
+        <div class="guest placeholder participant">
+          <div class="participant-wrapper">
+            <h3>Guest</h3>
+            <div class="video"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

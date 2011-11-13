@@ -1,5 +1,5 @@
 class Show < ActiveRecord::Base
-  belongs_to :user
+  has_many :events
 
-  validates :title, :session_id, :user_id, :presence => true
+  validates :hashtag, :session_id, :admin_name, :admin_password, :presence => true
 end

@@ -1,0 +1,12 @@
+@mixin radius($dist) {
+  border-radius: $dist; 
+  -moz-border-radius: $dist; 
+  -webkit-border-radius: $dist; 
+}
+
+@mixin drop-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
