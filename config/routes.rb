@@ -3,7 +3,7 @@ TownHall140::Application.routes.draw do
   get "event" => "event#index"
   get "event/current"
 
-  root :to => "main#index"
+  root :to => "main#splash"
 
   get "shows" => "main#index"
 
