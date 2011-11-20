@@ -46,7 +46,7 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
 
     authenticate_or_request_with_http_basic do |username, password|
-      username == @show.admin_name && password == @show.admin_password
+      password == @show.admin_password
     end
 
     session[:user_id] = @show.admin_name

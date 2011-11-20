@@ -1,11 +1,21 @@
 class MainController < ApplicationController
 
   def index
-    redirect_to "/shows/11"
-  end
+    show = Show.up_next 
+    show = show[0]
 
-  def splash
-    render :layout => 'landing'
+    if show
+      p show
+      seconds = (show.start_time - Time.now).round
+      hours = seconds / 60 / 60
+      p hours
+    end
+
+    if hours and hours.abs <= 2
+      redirect_to show
+    else
+      render :layout => 'landing', :action => 'splash'
+    end
   end
 
 end

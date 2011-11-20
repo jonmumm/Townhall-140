@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
       event = Event.where(:show_id => show_id, :state => "guest").order("created_at DESC").first
 
       if event
-        Event.create(:show_id => event.show_id, :stream_id => event.stream_id, :state => "leave")
+        Event.create(:show_id => event.show_id, :stream_id => event.stream_id, :state => "queue")
       end
     end
   end

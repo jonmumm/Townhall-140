@@ -9,24 +9,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :hashtag, "Twitter Hashtag" %>
     <div class="input">
       <%= f.text_field :hashtag %>
     </div>
   </div>
-  <div class="field">
-    <%= f.label :admin_name, "Admin Name" %>
+  <div class="clearfix">
+    <%= f.label :admin_name, "Name" %>
     <div class="input">
       <%= f.text_field :admin_name %>
     </div>
   </div>
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :admin_password, "Admin Password" %>
     <div class="input">
       <%= f.password_field :admin_password %>
     </div>
   </div>
+  <div class="clearfix">
+    <%= f.label :start_time, "Start Time" %>
+    <div class="input">
+      <%= f.datetime_select :start_time, { :default => 2.days.from_now, :use_short_month => true, :minute_step => 15, :start_year => Time.now.year }, { :class => "start_time" } %>
+    </div>
   <div class="actions">
     <%= f.submit :class => "primary btn large" %>
   </div>

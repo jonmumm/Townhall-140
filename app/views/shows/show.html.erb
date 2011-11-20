@@ -50,10 +50,10 @@ show_id: <%= @show.id %>,
             new TWTR.Widget({
               version: 2,
               type: 'search',
-              search: 'occupyharvard',
+              search: '<%= @show.hashtag %>',
               interval: 30000,
-              title: 'Town hall with Trey Grayson',
-              subject: 'Discuss #occupyharvard',
+              title: 'Town hall with @show.admin_name',
+              subject: 'Discuss <%= @show.hashtag %>',
               width: "100%",
               theme: {
                 shell: {
@@ -79,12 +79,12 @@ show_id: <%= @show.id %>,
       </div>
       <div class="span11 stage">
         <div class="hall-title">
-          <h3>Discuss <span class="hash">#occupyharvard</span> with <span class="speaker">Trey Grayson</span></h3>
-          <h4>Starting at 5:00 PM EST</h4>
+          <h3>Discuss <span class="hash"><%= @show.hashtag %></span> with <span class="speaker"><%= @show.admin_name %></span></h3>
+          <h4><%= @show.start_time.to_s(:start_time_format) %></h4>
         </div>
         <div class="host placeholder participant">
           <div class="participant-wrapper">
-            <h3>Trey Grayson</h3>
+            <h3><%= @show.admin_name %></h3>
             <div class="video"></div>
           </div>
         </div>
