@@ -10,7 +10,7 @@
   box-shadow: $params;
 }
 
-.red_btn, .grn_btn {
+.red_btn, .grn_btn, .blue_btn {
   font-size: 16px;
   padding: 10px 14px;
   font-weight: bold;
@@ -21,7 +21,7 @@
   @include radius(5px);
 }
 
-.red_btn:hover, .grn_btn:hover {
+.red_btn:hover, .grn_btn:hover, .blue_btn:hover {
   text-decoration: none;
   color: white;
   border: 1px dashed rgba(255,255,255,.5);
@@ -34,6 +34,14 @@
 
 .red_btn:hover {
   background: url('/assets/red-bg.jpg');
+}
+
+.blue_btn {
+  background: url('/assets/blue-bg2.jpg');
+}
+
+.blue_btn:hover {
+  background: url('/assets/blue-bg.jpg');
 }
 
 .red_btn:disabled {
@@ -97,6 +105,19 @@
 
 .moderator {
   .buttons {
+  }
+}
+
+.tweetForm {
+
+  textarea {
+    margin-bottom: 20px;
+    margin-top: 12px;
+    @include radius(6px);
+    resize: none;
+    height: 44px;
+    padding: 6px;
+    width: 268px;
   }
 }
 
