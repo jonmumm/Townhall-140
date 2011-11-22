@@ -76,6 +76,10 @@ show_id: <%= @show.id %>,
         </div>
         <div class="panel">
         </div>
+        <div class="tweetForm">
+          <textarea id="msg" name="msg" maxlength="140" class=""><%= @show.hashtag %> </textarea>
+          <a id="submitButton" class="blue_btn" href="https://twitter.com/intent/tweet?text=<%= @show.hashtag %>">Tweet</a>
+        </div>
       </div>
       <div class="span11 stage">
         <div class="hall-title">
