@@ -3,7 +3,7 @@ TownHall140::Application.routes.draw do
   get "event" => "event#index"
   get "event/current"
 
-  root :to => "main#index"
+  root :to => redirect("/shows/20")
 
   get "shows/new" => "shows#new", :as => :new_show
   get "shows/:id/admin" => "shows#admin", :as => :show_admin
