@@ -21,14 +21,19 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+  gem 'bourbon'
 end
 
 gem 'jquery-rails'
 gem 'pusher'
 
+gem 'activeadmin'
+gem 'meta_search', '>= 1.1.0.pre'
+
 gem 'omniauth'
 gem 'opentok'
 gem 'rails-backbone'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

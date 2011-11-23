@@ -1,9 +1,13 @@
 TownHall140::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   post "event" => "event#create"
   get "event" => "event#index"
   get "event/current"
 
-  root :to => redirect("/shows/20")
+  root :to => "main#index"
 
   get "shows/new" => "shows#new", :as => :new_show
   get "shows/:id/admin" => "shows#admin", :as => :show_admin

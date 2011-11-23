@@ -2,10 +2,12 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require bootstrap.min
- *= require show
+ *= require bootstrap
  *= require_self
 */
+
+@import "bourbon";
+@import "styles";
 
 html, body {
   height: 100%;
@@ -14,14 +16,4 @@ html, body {
 body {
   padding-top: 60px;
   background: url('/assets/bg.jpg');
-}
-
-a {
-  .red-btn {
-
-  }
-
-  .green-btn {
-
-  }
 }
