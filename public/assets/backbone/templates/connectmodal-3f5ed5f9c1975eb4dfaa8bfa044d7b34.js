@@ -1,0 +1,1 @@
+((function(){this.JST||(this.JST={}),this.JST["backbone/templates/connectmodal"]=function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments)};with(obj||{})__p.push('<div class="modal-header">\n  <h3>Connecting...</h3>\n</div>\n<div class="modal-body">\n  <p>Sit tight while you connect to the town hall.</p>\n</div>\n');return __p.join("")}})).call(this)
