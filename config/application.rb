@@ -46,6 +46,7 @@ module TownHall140
     config.assets.version = '1.0'
 
     config.assets.precompile << '*.js'
+    config.assets.initialize_on_precompile = false
 
   end
 end
