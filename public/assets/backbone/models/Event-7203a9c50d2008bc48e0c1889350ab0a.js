@@ -1,0 +1,1 @@
+((function(){TownHall140.Models.Event=Backbone.Model.extend({initialize:function(){return this.updateParticipant(),this.bind("change:state",this.onStateChange)},onStateChange:function(){return this.updateParticipant()},updateParticipant:function(){var a;a=app.get("participants").get(this.id);if(a!=null)return a.set({state:this.get("state")})}})})).call(this)
