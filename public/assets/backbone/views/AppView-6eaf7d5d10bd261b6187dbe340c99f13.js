@@ -1,1 +1,0 @@
-((function(){TownHall140.Views.AppView=Backbone.View.extend({template:JST["backbone/templates/app"],render:function(){var a,b,c;return a=new TownHall140.Views.ConnectModalView,a.render(),b=new TownHall140.Views.PanelView({el:$(".panel")}),b.render(),c=new TownHall140.Views.StageView({el:$(".stage"),collection:app.get("participants")})}})})).call(this)

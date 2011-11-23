@@ -11,7 +11,6 @@
 }
 
 .red_btn, .grn_btn, .blue_btn {
-  @include background-size(200%%, 50%);
   font-size: 16px;
   padding: 10px 14px;
   font-weight: bold;

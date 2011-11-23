@@ -33,7 +33,6 @@ gem 'meta_search', '>= 1.1.0.pre'
 gem 'omniauth'
 gem 'opentok'
 gem 'rails-backbone'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

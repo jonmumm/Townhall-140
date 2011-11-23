@@ -42,9 +42,6 @@ GEM
     activesupport (3.1.0)
       multi_json (~> 1.0)
     addressable (2.2.6)
-    anjlab-bootstrap-rails (1.4.0.9)
-      railties (~> 3.0)
-      thor (~> 0.14)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     bourbon (1.2.0)
@@ -232,7 +229,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  anjlab-bootstrap-rails
   bourbon
   coffee-rails (~> 3.1.0)
   jquery-rails
