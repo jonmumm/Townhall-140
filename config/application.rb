@@ -49,5 +49,6 @@ module TownHall140
     config.assets.precompile += ['active_admin.css', 'show.css']
     config.assets.initialize_on_precompile = false
 
+    config.action_mailer.default_url_options = { :host => 'townhall140.com' }
   end
 end
