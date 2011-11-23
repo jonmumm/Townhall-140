@@ -1,15 +1,3 @@
-@mixin radius($dist) {
-  border-radius: $dist; 
-  -moz-border-radius: $dist; 
-  -webkit-border-radius: $dist; 
-}
-
-@mixin drop-shadow($params) {
-  -webkit-box-shadow: $params;
-  -moz-box-shadow: $params;
-  box-shadow: $params;
-}
-
 .red_btn, .grn_btn, .blue_btn {
   font-size: 16px;
   padding: 10px 14px;

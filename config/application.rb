@@ -46,7 +46,7 @@ module TownHall140
     config.assets.version = '1.0'
 
     config.assets.precompile << "*.js"
-    config.assets.precompile += ['active_admin.css']
+    config.assets.precompile += ['active_admin.css', 'show.css']
     config.assets.initialize_on_precompile = false
 
   end
