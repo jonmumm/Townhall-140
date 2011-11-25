@@ -1,7 +1,10 @@
 class MainController < ApplicationController
 
   def index
-    render :layout => 'landing', :action => 'splash'
+    @subscriber = Subscriber.new
+
+    next_shows = Show.up_next
+    @next = next_shows[0]
   end
 
 end

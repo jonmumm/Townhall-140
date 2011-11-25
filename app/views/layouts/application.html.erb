@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Townhall 140</title>
+  <%= google_font_link_tag("Lobster") %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= yield :head %>
@@ -9,6 +10,10 @@
 </head>
 <body>
 
+  <div class="header">
+    <%= image_tag "logo.png" %>
+    <h2>Face to face on issues that matter</h2>
+  </div>
 
   <%= yield %>
 

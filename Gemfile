@@ -2,9 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 group :production do
   gem 'pg'
 end
@@ -13,15 +10,13 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'json'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
+gem 'json'
 gem 'jquery-rails'
 gem 'pusher'
 
@@ -36,12 +31,7 @@ gem 'omniauth'
 gem 'opentok'
 gem 'rails-backbone'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  
+end

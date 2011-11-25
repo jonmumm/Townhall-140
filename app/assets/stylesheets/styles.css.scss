@@ -1,50 +1,42 @@
-.red_btn, .grn_btn, .blue_btn {
+.btnStd {
+  cursor: pointer;
   font-size: 16px;
+  background: url('/assets/blue-bg2.jpg');
   padding: 10px 14px;
   font-weight: bold;
   @include drop-shadow(0px 2px 0px rgba(0,0,0,.2));
   color: rgba(255,255,255,.8);
-  border: 1px dashed rgba(255,255,255,.3);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   @include radius(5px);
 }
 
-.red_btn:hover, .grn_btn:hover, .blue_btn:hover {
+.btnStd:hover {
   text-decoration: none;
   color: white;
-  border: 1px dashed rgba(255,255,255,.5);
-  
+  background: url('/assets/blue-bg.jpg');
   @include drop-shadow(0px 2px 0px rgba(0,0,0,.1));
 }
 
-.red_btn {
+.stop {
   background: url('/assets/red-bg2.jpg');
 }
 
-.red_btn:hover {
+.stop:hover {
   background: url('/assets/red-bg.jpg');
 }
 
-.blue_btn {
-  background: url('/assets/blue-bg2.jpg');
-}
-
-.blue_btn:hover {
-  background: url('/assets/blue-bg.jpg');
-}
-
-.red_btn:disabled {
+.stop:disabled {
   background: url('/assets/red-bg3.jpg');
 }
 
-.grn_btn {
+.go {
   background: url('/assets/green-bg2.jpg');
 }
 
-.grn_btn:hover {
+.go:hover {
   background: url('/assets/green-bg.jpg');
 }
 
-.grn_btn:disabled {
+.go:disabled {
   background: url('/assets/green-bg3.jpg');
 }

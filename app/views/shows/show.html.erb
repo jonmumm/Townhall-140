@@ -34,11 +34,6 @@ show_id: <%= @show.id %>,
   </script>
 <% end %>
 
-<div class="header">
-  <h1>Townhall <span>140</span></h1>
-  <h2>Face to face on issues that matter</h2>
-</div>
-
 <% if @moderator %>
 <div class="main moderator">
 <% else %>
@@ -80,7 +75,7 @@ show_id: <%= @show.id %>,
         </div>
         <div class="tweetForm">
           <textarea id="msg" name="msg" maxlength="140" class=""><%= @show.hashtag %> </textarea>
-          <a id="submitButton" class="blue_btn" href="https://twitter.com/intent/tweet?text=<%= @show.hashtag %>">Tweet</a>
+          <a id="submitButton" class="btnStd" href="https://twitter.com/intent/tweet?text=<%= @show.hashtag %>">Tweet</a>
         </div>
       </div>
       <div class="span11 stage">

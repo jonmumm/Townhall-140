@@ -29,27 +29,7 @@
   }
 }
 
-.header {
-  text-align: center;
-  h1 {
-    font-size: 72px;
-    span {
-      font-weight: 100;
-    }
-  }
-  h2 {
-    font-weight: 100;
-  }
-  margin-bottom: 20px;
-}
-
-.moderator {
-  .buttons {
-  }
-}
-
 .tweetForm {
-
   textarea {
     margin-bottom: 20px;
     margin-top: 12px;
@@ -201,7 +181,7 @@
       h3 {
         text-align: center;
         font-size: 18px;
-        font-weight: 100;
+        font-family: 'Lobster', cursive;
         color: white;
         margin-bottom: 4px;
       }

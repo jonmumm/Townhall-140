@@ -1,5 +1,51 @@
-<div class="hero-unit">
-  <h1>Host a virtual town-hall!</h1>
-  <p>Fanny pack retro before they sold out whatever, food truck consequat fixie twee ea cardigan shoreditch odio. Eu lomo sartorial cardigan.</p>
-  <%= link_to "Login through Twitter »", "/auth/twitter", :class => "btn primary large" %>
+<%= content_for :head do %>
+  <%= stylesheet_link_tag "main" %>
+<% end %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+
+      <h3>We host face to face, online town halls</h3>
+
+      <div class="goals span9">
+        <h4>We want to...</h4>
+        <ul>
+          <li>make influencers and elected officals accessible.</li>
+          <li>encourage democratic participation.</li>
+          <li>increase issue awareness.</li>
+        </ul>
+      </div>
+
+      <div class="clip span7">
+        <div class="viewclip">Watch our last town hall <strong>»</strong></div>
+        <iframe class="vimeo" src="http://player.vimeo.com/video/32215902?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="upcoming span9">
+        <h3>Next event</h3>
+        <% if @next %>
+          <div class="name"><%= @next.admin_name %></div>
+          <div class="time"><%= @next.start_time.to_s(:start_time_format) %></div>
+        <% else %>
+          <div> No upcoming events</div>
+        <% end %>
+      </div>
+
+      <div class="signup span6">
+        <h3>Sign up</h3>
+        <%= render 'subscribers/form' %>
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<%= form_for @subscriber, :remote => true do |f| %>
+  <% @subscriber.errors.full_messages.each do |msg| %>
+    <div class="alert-message error">
+      <p>
+        <%= msg %>
+      </p>
+    </div>
+  <% end %>
+
+  <div class="clearfix">
+    <div class="input">
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <%= f.submit :class => "primary btn large" %>
+<% end %>

@@ -1,0 +1,66 @@
+@import "bourbon";
+
+.hero {
+  padding: 20px 0px;
+  width: 100%;
+  background: url('/assets/darkgray-bg.jpg');
+
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+  h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .goals {
+    h4 {
+      color: white;
+      font-size: 26px;
+    }
+
+    ul li {
+      font-size: 20px;
+      line-height: 38px;
+      font-family: 'Lobster', cursive;
+      color: #aaa;
+    }
+  }
+
+  .clip {
+    position: relative;
+
+    .viewclip {
+      position: absolute;
+      left: -242px;
+      top: 176px;
+      color: white;
+      font-family: 'Lobster', cursive;
+      font-size: 24px;
+    }
+
+    .vimeo {
+      @include box-shadow(0px 4px 10px 2px rgba(0,0,0,.5));
+      width: 380px;
+      float: right;
+      height: 218px;
+    }
+  }
+}
+
+.content {
+  h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 44px;
+    line-height: 66px;
+  }
+
+  .upcoming {
+    font-size: 20px;
+    color: #666;
+    text-shadow: 0px 1px 1px white;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}

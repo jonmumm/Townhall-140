@@ -3,5 +3,5 @@ class Show < ActiveRecord::Base
 
   validates :hashtag, :session_id, :admin_name, :admin_password, :start_time, :presence => true
 
-  scope :up_next, lambda { where("start_time > ?", Time.now ).order("start_time ASC").limit(1) }
+  scope :up_next, lambda { where("start_time > ?", Time.now.advance(:hours => -2)).order("start_time ASC").limit(1) }
 end
