@@ -8,6 +8,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 
 
@@ -31,7 +32,3 @@ gem 'omniauth'
 gem 'opentok'
 gem 'rails-backbone'
 
-gem "rspec-rails", :group => [:test, :development]
-group :test do
-  
-end
