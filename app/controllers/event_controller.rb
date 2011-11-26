@@ -1,4 +1,4 @@
-class EventController < ApplicationController
+class EventsController < ApplicationController
   def create
     @show = Show.find(params[:show_id])
 
