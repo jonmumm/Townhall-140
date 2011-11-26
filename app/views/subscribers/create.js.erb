@@ -2,10 +2,11 @@
   errors = $(".errors")
   errors.empty()
   <% @subscriber.errors.full_messages.each do |msg| %>
-  errors.append "<li><%= msg %></li>"
+  errors.append("<li><%= msg %></li>")
   <% end %>
 <% else %>
   new_subscriber = $("#new_subscriber")
-  new_subscriber.fadeOut 'fast', ->
+  new_subscriber.fadeOut('fast', function() {
     $("<p/>", { text: "Thanks for signing up!" }).hide().appendTo(new_subscriber.parent()).fadeIn('fast')
+  });
 <% end %>
