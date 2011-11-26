@@ -1,8 +1,9 @@
 ---
 bg.jpg: bg-3e68b5cf1c5c5aeba768d94686a191e3.jpg
-bg2.jpg: bg2-a670e513152974dbcd7915269f730841.jpg
+bg2.jpg: bg2-3e425a2df7023036d294aac0f7e9c53b.jpg
 blue-bg.jpg: blue-bg-02ba1433220b71a2fc714a3bd860b352.jpg
 blue-bg2.jpg: blue-bg2-4971f8ed4bdc403158a415006dd3091f.jpg
+darkgray-bg.jpg: darkgray-bg-324e26d1e9acbe69c9181d8b428b1180.jpg
 green-bg.jpg: green-bg-41efc3a56290ec715b631f5bd6bce8a7.jpg
 green-bg2.jpg: green-bg2-cc182415e3f7930e88b5462a58dc7f69.jpg
 green-bg3.jpg: green-bg3-04210914e627e1f9c701990a58093957.jpg
@@ -11,6 +12,7 @@ images/main-bg_02.png: images/main-bg_02-0b4125c54a774e93da76fbaeb459eee8.png
 images/main-bg_03.png: images/main-bg_03-23b9c29371eff0ce080369e4e0594241.png
 images/main-bg_04.png: images/main-bg_04-df471f3f73f21270fa0e53a5e1f277a2.png
 images/main-bg_05.png: images/main-bg_05-afbd02f84ca4b9904c5b9f84a52cf4a1.png
+logo.png: logo-6cae192a800de0b36096eda536ba8388.png
 main-bg.png: main-bg-23b9c29371eff0ce080369e4e0594241.png
 main-bg1.png: main-bg1-5631d8b4d0f692fd221cc4084d144310.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
@@ -30,19 +32,19 @@ active_admin/nested_menu_arrow_dark.gif: active_admin/nested_menu_arrow_dark-373
 active_admin/orderable.png: active_admin/orderable-312cf8ad195f38825b0fb3d7447aef58.png
 jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-ac6382033c1c5e27ebbc5a5a0597ccb9.js
-application.js: application-3bea52b21d09a0b072f6dfe7d9f1eaa7.js
-application.css: application-0d9e1f0b2507ba93f439fde109301038.css
+application.js: application-720a53fe95536af8dc81c81140fa2333.js
+application.css: application-cf8d310919d739d40c209ea357f0afdb.css
 active_admin.js: active_admin-d9973bd5416a9bd593fceac194c20b0c.js
 backbone/models/App.js: backbone/models/App-9dbe36b30e61d2be9bc334fd6eb634fa.js
 backbone/models/Event.js: backbone/models/Event-7203a9c50d2008bc48e0c1889350ab0a.js
 backbone/models/EventManager.js: backbone/models/EventManager-d85076f7f4e1cd04ec2b09ca89fc9fa1.js
 backbone/models/Participant.js: backbone/models/Participant-dee931a43d9d8c94dbde030be1360482.js
 backbone/models/ParticipantCollection.js: backbone/models/ParticipantCollection-21611c03dbed23ccba6f4db2800b85d6.js
-backbone/showjo.js: backbone/showjo-1a777fbaf51f18d1d4dcfab86e9b0ffd.js
+backbone/showjo.js: backbone/showjo-f926fed14f840e480036a29ab5dc05d5.js
 backbone/templates/app.js: backbone/templates/app-8dc409025ab15f225ddabd9d5de92eb6.js
 backbone/templates/connectmodal.js: backbone/templates/connectmodal-3f5ed5f9c1975eb4dfaa8bfa044d7b34.js
-backbone/templates/panel.js: backbone/templates/panel-21093ab646d6f32220a803b0193e3f36.js
-backbone/templates/participant.js: backbone/templates/participant-9d45b2bd0a266143ae3dcde2508ccb80.js
+backbone/templates/panel.js: backbone/templates/panel-9acc51ed068391239becb65098ce25de.js
+backbone/templates/participant.js: backbone/templates/participant-06e0b675b0b885e770450e04c10feae7.js
 backbone/views/AppView.js: backbone/views/AppView-6eaf7d5d10bd261b6187dbe340c99f13.js
 backbone/views/ConnectModalView.js: backbone/views/ConnectModalView-8a346e9e6fabfe745792ffcd0363662b.js
 backbone/views/PanelView.js: backbone/views/PanelView-e83048e33c99048af5a3f3474b0fa0e7.js
@@ -70,4 +72,5 @@ jquery-ui.js: jquery-ui-1257779252765a9d537d315acc189907.js
 jquery.js: jquery-01fddb45025ffecad3854b6a7d317645.js
 jquery_ujs.js: jquery_ujs-aa3c87a5f0c056d36cba14209b705209.js
 active_admin.css: active_admin-b122863b790e6d0866b5f267253fd4b8.css
-show.css: show-d8740450ac6e8325b248aa3ec114ad7e.css
+show.css: show-4e7aae3e0fbb6fe42b21c9ee1054cee9.css
+main.css: main-25b52c309ec71ffab8bcfae69abef74e.css

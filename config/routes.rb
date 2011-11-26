@@ -1,6 +1,4 @@
 TownHall140::Application.routes.draw do
-  get "test/index"
-
   root :to => "main#index"
   ActiveAdmin.routes(self)
 
