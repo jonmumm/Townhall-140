@@ -7,10 +7,9 @@
     </div>
   <% end %>
 
-  <div class="clearfix">
-    <div class="input">
-      <%= f.text_field :email %>
-    </div>
-  </div>
-  <%= f.submit :class => "primary btn large" %>
+  <%= f.text_field :email, :placeholder => "your@email.com" %>
+  <%= f.submit "Submit", :class => "btnStd small" %>
+
+  <ul class="errors">
+  </ul>
 <% end %>

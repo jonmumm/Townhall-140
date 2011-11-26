@@ -1,42 +1,72 @@
 .btnStd {
   cursor: pointer;
   font-size: 16px;
-  background: url('/assets/blue-bg2.jpg');
+  @include background-image(linear-gradient(rgba(0,0,0,.0) 0%, rgba(0,0,0,.2)), url("/assets/blue-bg2.jpg"));
   padding: 10px 14px;
   font-weight: bold;
-  @include drop-shadow(0px 2px 0px rgba(0,0,0,.2));
-  color: rgba(255,255,255,.8);
+  color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   @include radius(5px);
 }
 
 .btnStd:hover {
+  @include background-image(linear-gradient(rgba(0,0,0,.2) 0%, transparent 100%), url("/assets/blue-bg2.jpg"));
+  @include transition(none);
+  @include box-shadow(inset 0px -1px 1px 0px rgba(255,255,255,.2));
   text-decoration: none;
   color: white;
-  background: url('/assets/blue-bg.jpg');
-  @include drop-shadow(0px 2px 0px rgba(0,0,0,.1));
+}
+
+.btnStd.small {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.btnStd:disabled, .btnStd.go:disabled, .btnStd.stop:disabled {
+  cursor: default;
+  @include background-image(linear-gradient(rgba(180,180,180,1) 0%, rgba(200,200,200,1) 100%));
 }
 
 .stop {
-  background: url('/assets/red-bg2.jpg');
+  @include background-image(linear-gradient(rgba(0,0,0,.0) 0%, rgba(0,0,0,.2)), url("/assets/red-bg2.jpg"));
 }
 
 .stop:hover {
-  background: url('/assets/red-bg.jpg');
-}
-
-.stop:disabled {
-  background: url('/assets/red-bg3.jpg');
+  @include background-image(linear-gradient(rgba(0,0,0,.2) 0%, transparent 100%), url("/assets/red-bg2.jpg"));
 }
 
 .go {
-  background: url('/assets/green-bg2.jpg');
+  @include background-image(linear-gradient(rgba(0,0,0,.0) 0%, rgba(0,0,0,.2)), url("/assets/green-bg2.jpg"));
 }
 
 .go:hover {
-  background: url('/assets/green-bg.jpg');
+  @include background-image(linear-gradient(rgba(0,0,0,.2) 0%, transparent 100%), url("/assets/green-bg2.jpg"));
 }
 
 .go:disabled {
   background: url('/assets/green-bg3.jpg');
+}
+
+input, textarea {
+  background: url('/assets/bg2.jpg');
+  font-size: 14px;
+  padding: 8px;
+  font-weight: 200;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+input:focus, textarea:focus {
+  border: 1px solid rgba(0,0,0,.1);
+  @include box-shadow(0px 0px 6px 2px rgba(0,0,0,.2));
+  @include transition(none);
+}
+
+a {
+  color: #436a7e;
+  text-shadow: 1px 1px 2px black;
+}
+
+a:hover {
+  color: #335161;
+  text-decoration: none;
 }

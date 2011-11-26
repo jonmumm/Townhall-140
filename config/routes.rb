@@ -1,4 +1,6 @@
 TownHall140::Application.routes.draw do
+  get "test/index"
+
   root :to => "main#index"
   ActiveAdmin.routes(self)
 
@@ -9,7 +11,6 @@ TownHall140::Application.routes.draw do
   get "event/current"
 
   resource :subscribers
-
 
   get "shows/new" => "shows#new", :as => :new_show
   get "shows/:id/admin" => "shows#admin", :as => :show_admin

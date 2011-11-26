@@ -10,12 +10,24 @@
 </head>
 <body>
 
-  <div class="header">
-    <%= image_tag "logo.png" %>
-    <h2>Face to face on issues that matter</h2>
-  </div>
+  <div class="wrapper">
+    <div class="header">
+      <%= image_tag "logo.png" %>
+      <h2>Face to face on issues that matter</h2>
+    </div>
 
-  <%= yield %>
+    <%= yield %>
+    <div class="push"></div>
+  </div>
+  <div class="footer">
+    <div class="container">
+    <%= image_tag "logo.png" %>
+    <ul>
+      <li><%= link_to "contact us", "mailto:contact@townhall140.com" %></li>
+      <li><%= link_to "blog", "http://townhall140.tumblr.com/" %></li>
+    </ul>
+    </div>
+  </div>
 
 
 </body>

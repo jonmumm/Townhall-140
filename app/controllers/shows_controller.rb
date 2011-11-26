@@ -2,7 +2,7 @@ require 'opentok'
 
 class ShowsController < ApplicationController
   before_filter :authenticate, :only => [:admin]
-  before_filter :init_opentok, :only => [:show, :create, :admin]
+  before_filter :init_opentok, :only => [:show, :admin]
 
   def show
     @show = Show.find(params[:id])
@@ -16,21 +16,6 @@ class ShowsController < ApplicationController
     @moderator = true
 
     render 'show'
-  end
-
-  def new
-    @show = Show.new
-  end
-
-  def create
-    @show = Show.new(params[:show])
-    @show.session_id = @opentok.create_session.to_s
-
-    if @show.save
-      redirect_to "/shows/#{@show.id}/admin"
-    else
-      render :action => "new"
-    end
   end
 
   private

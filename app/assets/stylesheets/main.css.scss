@@ -4,6 +4,7 @@
   padding: 20px 0px;
   width: 100%;
   background: url('/assets/darkgray-bg.jpg');
+  @include box-shadow(inset 0px -1px 10px 3px rgba(0,0,0,.8));
 
   text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
   h3 {
@@ -50,17 +51,28 @@
 }
 
 .content {
+  margin-top: 12px;
   h3 {
     font-family: 'Lobster', cursive;
     font-size: 44px;
-    line-height: 66px;
+    line-height: 62px;
   }
 
-  .upcoming {
+  p, h3 {
+    text-shadow: 0px 1px 1px white;
+  }
+
+  p {
     font-size: 20px;
     color: #666;
-    text-shadow: 0px 1px 1px white;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 20px;
+  }
+
+  .errors {
+    margin-top: 6px;
+    li {
+      color: red;
+    }
   }
 }

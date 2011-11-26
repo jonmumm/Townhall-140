@@ -34,15 +34,16 @@
       <div class="upcoming span9">
         <h3>Next event</h3>
         <% if @next %>
-          <div class="name"><%= @next.admin_name %></div>
-          <div class="time"><%= @next.start_time.to_s(:start_time_format) %></div>
+          <p class="name"><%= @next.admin_name %></p>
+          <p class="time"><%= @next.start_time.to_s(:start_time_format) %></p>
         <% else %>
-          <div> No upcoming events</div>
+          <p> No upcoming events</p>
         <% end %>
       </div>
 
       <div class="signup span6">
         <h3>Sign up</h3>
+        <p>Get information on upcoming events</p>
         <%= render 'subscribers/form' %>
       </div>
 

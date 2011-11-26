@@ -1,5 +1,11 @@
 <% if @subscriber.new_record? %>
-  console.log 'new'
+  errors = $(".errors")
+  errors.empty()
+  <% @subscriber.errors.full_messages.each do |msg| %>
+  errors.append "<li><%= msg %></li>"
+  <% end %>
 <% else %>
-  console.log 'saved'
+  new_subscriber = $("#new_subscriber")
+  new_subscriber.fadeOut 'fast', ->
+    $("<p/>", { text: "Thanks for signing up!" }).hide().appendTo(new_subscriber.parent()).fadeIn('fast')
 <% end %>
