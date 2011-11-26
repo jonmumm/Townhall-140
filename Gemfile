@@ -33,9 +33,6 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
 gem 'validatious'
 
-gem 'activeadmin'
-gem 'meta_search', '>= 1.1.0.pre'
-
 gem 'omniauth'
 gem 'opentok'
 gem 'rails-backbone'
