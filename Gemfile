@@ -16,6 +16,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launch'
+  gem 'nifty-generators'
 end
 
 group :assets do
@@ -38,3 +39,4 @@ gem 'activeadmin'
 gem 'opentok'
 gem 'rails-backbone'
 
+gem "mocha", :group => :test

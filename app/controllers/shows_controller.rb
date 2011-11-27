@@ -1,8 +1,10 @@
 require 'opentok'
 
 class ShowsController < ApplicationController
-  before_filter :authenticate, :only => [:admin]
+  before_filter :authenticate
   before_filter :init_opentok, :only => [:show, :admin]
+
+  before_filter :authenticate
 
   def show
     @show = Show.find(params[:id])
@@ -27,13 +29,14 @@ class ShowsController < ApplicationController
     @opentok.generate_token :session_id => @show.session_id, :role => role
   end
 
-  def authenticate
-    @show = Show.find(params[:id])
-
-    authenticate_or_request_with_http_basic do |username, password|
-      password == @show.admin_password
-    end
-
-    session[:user_id] = @show.admin_name
-  end
+  
+#  def authenticate
+#    @show = Show.find(params[:id])
+#
+#    authenticate_or_request_with_http_basic do |username, password|
+#      password == @show.admin_password
+#    end
+#
+#    session[:user_id] = @show.admin_name
+#  end
 end
