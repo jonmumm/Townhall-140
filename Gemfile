@@ -17,6 +17,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launch'
   gem 'nifty-generators'
+  gem 'mocha'
 end
 
 group :assets do
@@ -27,6 +28,7 @@ end
 gem 'json'
 gem 'jquery-rails'
 gem 'pusher'
+gem 'rails-backbone'
 
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'bourbon'
@@ -36,7 +38,6 @@ gem 'validatious'
 
 gem 'omniauth'
 gem 'activeadmin'
-gem 'opentok'
-gem 'rails-backbone'
+gem 'meta_search',    '>= 1.1.0.pre'
 
-gem "mocha", :group => :test
+gem 'opentok'
