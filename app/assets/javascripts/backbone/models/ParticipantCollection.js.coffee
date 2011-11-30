@@ -14,15 +14,20 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
 
   onStartShow: ->
     @add new TownHall140.Models.Participant
+      id: app.get("session").connection.data
 
   onStopShow: ->
-    #
+    # TODO
 
   onJoinShow: ->
-    @add new TownHall140.Models.Participant
+    if app.get('role') is "publisher"
+      @add new TownHall140.Models.Participant
+        id: app.get("session").connection.data
+    else
+      $(document).trigger 'loginRequired'
 
   onLeaveShow: ->
-    #
+    # TODO
 
   onSessionConnect: (event) ->
     for stream in event.streams
@@ -33,7 +38,7 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
       @addParticipant stream
 
   onStreamDestroy: (event) ->
-    participant = @get event.streams[0].streamId
+    participant = @get event.streams[0].connection.data
     @remove participant
 
   onRemove: (event, participant) ->
@@ -42,12 +47,12 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
 
   addParticipant: (stream) ->
     if stream.connection.connectionId isnt app.get('session').connection.connectionId
-      event = app.get('events').get(stream.streamId)
+      event = app.get('events').get(stream.connection.data)
       if event?
         state = event.get 'state'
       else
         state = 'queue'
       @add new TownHall140.Models.Participant
-        id: stream.streamId
+        id: stream.connection.data
         stream: stream
         state: state

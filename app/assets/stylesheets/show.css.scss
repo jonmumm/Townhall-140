@@ -48,22 +48,42 @@
   padding-top: 2px;
   
   .sidebar {
-    .twitter {
-      text-align: center;
-      margin-top: 10px;
-      .twtr-widget {
-        font-family: inherit!important;
+    .chat {
+      .input {
+        margin-top: 8px;
 
-        .twtr-hd {
-          display: none;
+        input {
+          float: left;
+          @include radius(6px);
         }
 
-        .twtr-timeline {
-          height: 350px!important;
+        input[type=text] {
+          width: 191px;
+        }
+
+        .submit {
+          margin-left: 4px;
+          padding: 8px 6px;
         }
       }
-      #twtr-widget-1 .twtr-new-results, #twtr-widget-1 .twtr-results-inner, #twtr-widget-1 .twtr-timeline {
-        background: url("/assets/bg2.jpg")!important;
+
+      .messages {
+        margin: 0;
+        padding: 6px 9px;
+        list-style: none;
+        overflow-y: scroll;
+        margin-top: 10px;
+        height: 320px;
+        background: url("/assets/bg2.jpg");
+        @include radius(6px);
+
+        li {
+          span {
+            font-weight: bold;
+            color: #666;
+          }
+          margin-bottom: 2px;
+        }
       }
     }
 
@@ -180,6 +200,7 @@
     .host, .guest {
       h3 {
         text-align: center;
+        font-weight: normal;
         font-size: 18px;
         font-family: 'Lobster', cursive;
         color: white;

@@ -1,23 +1,20 @@
 require 'opentok'
 
 class ShowsController < ApplicationController
-  before_filter :authenticate
-  before_filter :init_opentok, :only => [:show, :admin]
-
-  before_filter :authenticate
+  before_filter :init_opentok, :only => [:show]
 
   def show
     @show = Show.find(params[:id])
 
-    @token = generate_token OpenTok::RoleConstants::PUBLISHER
-    @moderator = false
-  end
+    if @show.user_is_moderator current_user 
+      @role = OpenTok::RoleConstants::MODERATOR
+    elsif current_user
+      @role = OpenTok::RoleConstants::PUBLISHER
+    else
+      @role = OpenTok::RoleConstants::SUBSCRIBER
+    end
 
-  def admin
-    @token = generate_token OpenTok::RoleConstants::MODERATOR
-    @moderator = true
-
-    render 'show'
+    @token = generate_token @role
   end
 
   private
@@ -26,7 +23,11 @@ class ShowsController < ApplicationController
   end
 
   def generate_token(role)
-    @opentok.generate_token :session_id => @show.session_id, :role => role
+    if current_user
+      @opentok.generate_token :session_id => @show.session_id, :role => role, :connection_data => current_user.id.to_s
+    else
+      @opentok.generate_token :session_id => @show.session_id, :role => role
+    end
   end
 
   

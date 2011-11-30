@@ -1,6 +1,7 @@
 TownHall140.Views.PanelView = Backbone.View.extend
   initialize: ->
     app.get('session').addEventListener 'sessionConnected', @onSessionConnect
+    $(document).bind 'loginCanceled', @onLoginCancel
 
   template: JST["backbone/templates/panel"]
 
@@ -33,4 +34,8 @@ TownHall140.Views.PanelView = Backbone.View.extend
 
   onLeaveShowClick: ->
     $(document).trigger 'leaveShow'
+    $(".leaveShowBtn").attr 'disabled', 'disabled'
+
+  onLoginCancel: ->
+    $(".joinShowBtn").removeAttr 'disabled'
     $(".leaveShowBtn").attr 'disabled', 'disabled'

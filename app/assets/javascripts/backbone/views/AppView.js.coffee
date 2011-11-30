@@ -4,6 +4,11 @@ TownHall140.Views.AppView = Backbone.View.extend
   render: ->
     connectView = new TownHall140.Views.ConnectModalView
     connectView.render()
+    loginView = new TownHall140.Views.LoginModalView
+      el: $("#loginModal")
+
+    chatVIew = new TownHall140.Views.ChatView
+      el: $(".chat")
 
     panelView = new TownHall140.Views.PanelView
       el: $(".panel")

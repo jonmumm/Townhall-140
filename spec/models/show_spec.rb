@@ -13,13 +13,13 @@ describe Show do
     @show.should be_valid
   end
 
-  it "should not be valid without hashtag" do
-    @show.hashtag = nil
-    @show.should_not be_valid
-  end
-
   it "should generate a session_id" do
     @show.session_id.should_not be_nil
+  end
+
+  it "should have a user" do
+    @show.user = nil
+    @show.should_not be_valid
   end
 
   it "should not be valid witout start_time" do
@@ -27,14 +27,19 @@ describe Show do
     @show.should_not be_valid
   end
 
-  it "should not be valid without admin name" do
-    @show.admin_name = nil
-    @show.should_not be_valid
+    
+  it "should be true if show belongs to user" do
+    @show.user_is_moderator(@show.user).should be_true
   end
 
-  it "should not be valid without admin password" do
-    @show.admin_password = nil
-    @show.should_not be_valid
+  it "should be true if user is an admin" do
+    user = Factory.create(:user, :admin => true)
+    @show.user_is_moderator(user).should be_true
+  end
+
+  it "should be false if user is non admin, non owner" do
+    user = Factory.create(:user)
+    @show.user_is_moderator(user).should be_false
   end
 
   describe "Next" do

@@ -15,11 +15,11 @@ html, body {
 }
 
 body {
-  padding-top: 30px;
   background: url('/assets/bg.jpg');
 }
 
 .header {
+  margin-top: 30px;
   text-align: center;
   h2 {
     font-family: 'Lobster', cursive;
@@ -61,5 +61,14 @@ body {
   ul li a {
     padding-left: 16px;
   }
+}
+
+.navbar {
+  background: rgba(0,0,0,.1);
+  color: #777;
+  padding: 4px 0px;
+  @include box-shadow(inset 0px -4px 4px rgba(0,0,0,.1));
+  font-size: 14px;
+  text-align: right;
 }
 

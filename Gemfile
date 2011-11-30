@@ -8,16 +8,25 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+
   gem 'rspec-rails'
+
+  gem 'spork', '~> 0.9.0.rc'
+
   gem 'guard-rspec'
   gem 'guard-livereload'
-  gem 'growl_notify'
+  gem 'guard-spork'
+
+  gem 'growl'
+
   gem 'rb-fsevent', :require => false
   gem 'factory_girl_rails'
+
   gem 'capybara'
-  gem 'launch'
-  gem 'nifty-generators'
   gem 'mocha'
+
+  gem 'nifty-generators'
+  gem 'database_cleaner'
 end
 
 group :assets do
@@ -27,7 +36,6 @@ end
 
 gem 'json'
 gem 'jquery-rails'
-gem 'pusher'
 gem 'rails-backbone'
 
 gem 'sass-rails', "  ~> 3.1.0"
@@ -38,6 +46,8 @@ gem 'validatious'
 
 gem 'omniauth'
 gem 'activeadmin'
+gem 'formtastic'
 gem 'meta_search',    '>= 1.1.0.pre'
 
-gem 'opentok'
+gem 'opentok', :git => "git@github.com:jonmumm/opentok.git"
+gem 'pusher'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127031018) do
+ActiveRecord::Schema.define(:version => 20111130025738) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -36,23 +36,29 @@ ActiveRecord::Schema.define(:version => 20111127031018) do
     t.datetime "updated_at"
   end
 
+  create_table "chats", :force => true do |t|
+    t.string   "user_id"
+    t.string   "show_id"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.integer  "show_id"
-    t.string   "stream_id"
+    t.string   "user_id"
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "shows", :force => true do |t|
-    t.string   "hashtag"
     t.string   "archive_id"
     t.string   "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "admin_name"
-    t.string   "admin_password"
     t.datetime "start_time"
+    t.integer  "user_id"
   end
 
   create_table "subscribers", :force => true do |t|
@@ -75,6 +81,8 @@ ActiveRecord::Schema.define(:version => 20111127031018) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                                 :default => false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

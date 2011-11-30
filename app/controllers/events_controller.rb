@@ -1,15 +1,20 @@
 class EventsController < ApplicationController
+  # before_filter :authenticate, :only => [:create]
+
   def create
     @show = Show.find(params[:show_id])
-
-    if session[:user_id] == @show.admin_name
-      @event = Event.create(:show_id => params[:show_id], :stream_id => params[:stream_id], :state => params[:state])
-      response = { :success => true, :event => @event }
+    
+    if @show.user_is_moderator(current_user)
+      @event = Event.new(params[:event])
+      @event.show_id = @show.id
+      if @event.save
+        render :json => @event, :status => :created
+      else
+        render :json => @event.errors, :status => :unprocessable_entity
+      end
     else
-      response = { :success => false, :msg => "Do not have access" }
+      render :json => { :message => "User does not have access to create events for this show" }, :status => :unauthorized
     end
-
-    render :json => response
   end
 
   def index
@@ -18,6 +23,7 @@ class EventsController < ApplicationController
     render :json => @events
   end
 
+=begin
   def current
     guest = Event.where(:show_id => params[:show_id], :state => "guest").order("created_at DESC").limit(1)
     host = Event.where(:show_id => params[:show_id], :state => "host").order("created_at DESC").limit(1)
@@ -32,5 +38,6 @@ class EventsController < ApplicationController
 
     render :json => response
   end
+=end
 
 end

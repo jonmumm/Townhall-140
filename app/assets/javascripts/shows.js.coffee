@@ -1,10 +1,11 @@
-$(document).ready ->
-  console.log 'ready'
-  $("#msg").change ->
-    console.log 'hi'
+jQuery ->
+  window.app = new TownHall140.Models.App app_config
+  app.setup()
 
-  $(".tweetForm textarea").keypress (event) ->
-    msg = event.target.value
+  view = new TownHall140.Views.AppView
+    model: app
+    el: $(".app")
 
-    $(".tweetForm #submitButton").attr "href", (i, val) ->
-      return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(msg)
+  view.render()
+  app.start()
+

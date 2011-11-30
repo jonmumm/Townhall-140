@@ -3,6 +3,16 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <% if @user.first_name.blank? %>
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+  <% end %>
+
+  <% if @user.last_name.blank? %>
+  <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+  <% end %>
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 

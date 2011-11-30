@@ -1,15 +1,15 @@
 TownHall140.Collections.EventManager = Backbone.Collection.extend
   initialize: ->
-    show_id = app.get 'show_id'
+    show_id = app.get('show').id
 
     $(document).bind 'toStage', $.proxy @onToStage, @
     $(document).bind 'offStage', $.proxy @onOffStage, @
 
-    $.getJSON "/event/current", { show_id: app.get 'show_id' }, $.proxy @onEventsInit, @
+    $.getJSON "/shows/#{show_id}/events", $.proxy @onEventsInit, @
 
-    app.get('pusher').subscribe("#{show_id}").bind 'state', $.proxy @onEventNew, @
+    app.get('pusher').bind 'state', $.proxy @onEventNew, @
 
-    if app.get('is_moderator')
+    if app.get('role') is "moderator"
       app.get('session').addEventListener 'streamCreated', $.proxy @onStreamCreate, @
 
   onEventsInit: (events) ->
@@ -20,11 +20,11 @@ TownHall140.Collections.EventManager = Backbone.Collection.extend
     @processEvent event
 
   processEvent: (event) ->
-    if @get event.stream_id
-      @get(event.stream_id).set { state: event.state }
+    if @get event.user_id
+      @get(event.user_id).set { state: event.state }
     else
       @add new TownHall140.Models.Event
-        id: event.stream_id
+        id: event.user_id
         state: event.state
 
   onToStage: (event, participant) ->
@@ -40,14 +40,16 @@ TownHall140.Collections.EventManager = Backbone.Collection.extend
     else
       state = "queue"
 
-    @postEvent stream.streamId, state
+    @postEvent stream.connection.data, state
 
-  postEvent: (stream_id, state) ->
+  postEvent: (user_id, state) ->
+    show_id = app.get('show').id
+    event =
+      user_id: user_id
+      state: state
+
     $.ajax
       type: "post"
-      url: "/event"
+      url: "/shows/#{show_id}/events"
       data:
-        show_id: app.get 'show_id'
-        stream_id: stream_id
-        state: state
-
+        event: event

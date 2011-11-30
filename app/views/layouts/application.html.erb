@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Townhall 140</title>
-  <%= google_font_link_tag("Lobster") %>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= yield :head %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-  <div class="wrapper">
-    <div class="header">
-      <%= image_tag "logo.png" %>
-      <h2>Face to face on issues that matter</h2>
-    </div>
-
-    <% if user_signed_in? %>
-      Signed in as <%= current_user.email %>. Not you?
-      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>.
+  <head>
+    <title>Townhall 140</title>
+    <% if false %>
+      <%= google_font_link_tag("Lobster") %>
     <% end %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-    <%= yield %>
-    <div class="push"></div>
-  </div>
-  <div class="footer">
-    <div class="container">
-    <%= image_tag "logo.png" %>
-    <ul>
-      <li><%= link_to "contact us", "mailto:contact@townhall140.com" %></li>
-      <li><%= link_to "blog", "http://townhall140.tumblr.com/" %></li>
-    </ul>
+    <div class="wrapper">
+      <div class="navbar">
+        <div class="container">
+          <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>. Not you? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+          <% else %>
+            You are not logged in. <a href="#">Register or sign-in</a>.
+          <% end %>
+        </div>
+      </div>
+      <div class="header">
+        <%= image_tag "logo.png" %>
+        <h2>Face to face on issues that matter</h2>
+      </div>
+
+
+      <%= yield %>
+      <div class="push"></div>
     </div>
-  </div>
+    <div class="footer">
+      <div class="container">
+        <%= image_tag "logo.png" %>
+        <ul>
+          <li><%= link_to "contact us", "mailto:contact@townhall140.com" %></li>
+          <li><%= link_to "blog", "http://townhall140.tumblr.com/" %></li>
+        </ul>
+      </div>
+    </div>
 
 
-</body>
+  </body>
 </html>

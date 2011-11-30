@@ -1,0 +1,17 @@
+<% title "Chats" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Show</th>
+    <th>Message</th>
+  </tr>
+  <% for chat in @chats %>
+    <tr>
+      <td><%= chat.user_id %></td>
+      <td><%= chat.show_id %></td>
+      <td><%= chat.message %></td>
+    </tr>
+  <% end %>
+</table>
+

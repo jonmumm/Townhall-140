@@ -34,7 +34,7 @@
       <div class="upcoming span9">
         <h3>Next event</h3>
         <% if @next %>
-          <p class="name"><%= @next.admin_name %></p>
+          <p class="name"><%= @next.user.full_name %></p>
           <p class="time"><%= @next.start_time.to_s(:start_time_format) %></p>
         <% else %>
           <p> No upcoming events</p>

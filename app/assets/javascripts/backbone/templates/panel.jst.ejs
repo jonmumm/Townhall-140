@@ -1,4 +1,4 @@
-<% if (app.get('is_moderator')) { %>
+<% if (app.get("role") == "moderator" ) { %>
   <button class="btnStd go startShowBtn" disabled="disabled">Start Event</button>
   <button class="btnStd stop stopShowBtn" disabled="disabled">Stop Event</button>
 <% } else { %>

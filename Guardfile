@@ -1,5 +1,17 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('spec/spec_helper.rb')
+  watch('test/test_helper.rb')
+end
+
 guard 'livereload' do
   watch(%r{app/.+\.(erb|haml)})
   watch(%r{app/helpers/.+\.rb})
@@ -9,7 +21,7 @@ guard 'livereload' do
   watch(%r{config/locales/.+\.yml})
 end
 
-guard 'rspec', :version => 2 do
+guard 'rspec', :cli => "--drb", :version => 2 do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
