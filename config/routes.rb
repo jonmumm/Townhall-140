@@ -1,5 +1,5 @@
 TownHall140::Application.routes.draw do
-  root :to => "main#index"
+  root :to => redirect("/shows/4")
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
