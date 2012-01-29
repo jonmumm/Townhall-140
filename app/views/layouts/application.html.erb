@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>Townhall 140</title>
-    <% if false %>
-      <%= google_font_link_tag("Lobster") %>
-    <% end %>
+    <%= google_font_link_tag("Lobster") %>
+    <%= stylesheet_link_tag "http://zocial.smcllns.com/css/zocial.css" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= yield :head %>
@@ -18,13 +17,12 @@
           <% if user_signed_in? %>
             Signed in as <%= current_user.email %>. Not you? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
           <% else %>
-            You are not logged in. <a href="#">Register or sign-in</a>.
+            You are not logged in. <%= link_to "Register", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
           <% end %>
         </div>
       </div>
       <div class="header">
-        <%= image_tag "logo.png" %>
-        <h2>Face to face on issues that matter</h2>
+        <%= image_tag "th-header.jpg" %>
       </div>
 
 
@@ -33,7 +31,7 @@
     </div>
     <div class="footer">
       <div class="container">
-        <%= image_tag "logo.png" %>
+        <%= image_tag "th-header.jpg" %>
         <ul>
           <li><%= link_to "contact us", "mailto:contact@townhall140.com" %></li>
           <li><%= link_to "blog", "http://townhall140.tumblr.com/" %></li>

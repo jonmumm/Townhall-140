@@ -1,4 +1,6 @@
 TownHall140::Application.routes.draw do
+  resources :questions
+
   ActiveAdmin.routes(self)
 
   root :to => "main#index"
@@ -11,6 +13,7 @@ TownHall140::Application.routes.draw do
   resources :shows do
     resources :chats
     resources :events
+    resource :questions
   end
 
 end

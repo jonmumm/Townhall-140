@@ -9,7 +9,7 @@ class ChatsController < ApplicationController
         render :json => @chat.errors, :status => :unprocessable_entity
       end
     else
-      render :json => { :message => "User does not have access to create events for this show" }, :status => :unauthorized
+      render :json => { :message => "User does not have access to chat. Login." }, :status => :unauthorized
     end
   end
 

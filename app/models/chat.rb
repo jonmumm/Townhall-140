@@ -16,6 +16,6 @@ class Chat < ActiveRecord::Base
 
   private
   def push_update
-    Pusher[show_id].trigger!('chat', { :user_id => user_id, :message => message })
+    Pusher[show_id].trigger!('chat', { :user => user, :message => message })
   end
 end

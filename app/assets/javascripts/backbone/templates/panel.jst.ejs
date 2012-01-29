@@ -1,7 +1,7 @@
 <% if (app.get("role") == "moderator" ) { %>
-  <button class="btnStd go startShowBtn" disabled="disabled">Start Event</button>
-  <button class="btnStd stop stopShowBtn" disabled="disabled">Stop Event</button>
+  <button class="btn primary startShowBtn" disabled="disabled">Start Event</button>
+  <button class="btn stopShowBtn" disabled="disabled">Stop Event</button>
 <% } else { %>
-  <button class="btnStd go joinShowBtn" disabled="disabled">Join Event</button>
-  <button class="btnStd stop leaveShowBtn" disabled="disabled">Leave Event</button>
+  <button class="btn primary joinShowBtn" disabled="disabled">Join Event</button>
+  <button class="btn leaveShowBtn" disabled="disabled">Leave Event</button>
 <% } %>

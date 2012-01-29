@@ -7,6 +7,9 @@ TownHall140.Views.AppView = Backbone.View.extend
     loginView = new TownHall140.Views.LoginModalView
       el: $("#loginModal")
 
+    questionView = new TownHall140.Views.QuestionModalView
+      el: $("#questionModal")
+
     chatVIew = new TownHall140.Views.ChatView
       el: $(".chat")
 

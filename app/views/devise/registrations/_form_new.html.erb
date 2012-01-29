@@ -1,0 +1,19 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <% if @user.first_name.blank? %>
+    <%= f.bootstrap_text_field :first_name %>
+  <% end %>
+
+  <% if @user.last_name.blank? %>
+    <%= f.bootstrap_text_field :last_name %>
+  <% end %>
+
+  <%= f.bootstrap_email_field :email %>
+
+  <% if @user.password_required? %>
+    <%= f.bootstrap_password_field :password %>
+  <% end %>
+
+  <div class="actions"><%= f.submit "Sign up", :class => "btn primary" %></div>
+<% end %>

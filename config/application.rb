@@ -9,6 +9,9 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+ActionView::Base.field_error_proc = proc { |input, instance| input }
+
+
 module TownHall140
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

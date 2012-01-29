@@ -3,6 +3,7 @@ require 'opentok'
 class Show < ActiveRecord::Base
   has_many :events
   has_many :chats
+  has_many :questions
   belongs_to :user
   validates_presence_of :user
 

@@ -1,0 +1,15 @@
+<%= form_for @question, :remote => true do |f| %>
+  <% @question.errors.full_messages.each do |msg| %>
+    <div class="alert-message error">
+      <p>
+        <%= msg %>
+      </p>
+    </div>
+  <% end %>
+
+  <%= f.text_field :body, :placeholder => "Enter your question" %>
+  <%= f.submit "Submit", :class => "btn" %>
+
+  <ul class="errors">
+  </ul>
+<% end %>

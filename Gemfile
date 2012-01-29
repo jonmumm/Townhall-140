@@ -41,6 +41,7 @@ gem 'rails-backbone'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'bourbon'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
+gem 'bootstrap-form'
 
 gem 'validatious'
 

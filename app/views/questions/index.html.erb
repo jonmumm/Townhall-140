@@ -1,0 +1,18 @@
+<% title "Questions" %>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>User</th>
+    <th>Show</th>
+  </tr>
+  <% for question in @questions %>
+    <tr>
+      <td><%= question.body %></td>
+      <td><%= question.user_id %></td>
+      <td><%= question.show_id %></td>
+      <td><%= link_to "Show", question %></td>
+    </tr>
+  <% end %>
+</table>
+

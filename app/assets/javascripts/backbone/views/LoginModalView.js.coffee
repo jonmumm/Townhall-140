@@ -7,7 +7,7 @@ TownHall140.Views.LoginModalView = Backbone.View.extend
     @render()
 
   onModalHide: ->
-    $(document).trigger 'loginCanceled'
+    $(document).trigger 'joinCancelled'
 
   render: ->
     @el.modal

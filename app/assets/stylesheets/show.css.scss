@@ -6,50 +6,16 @@
   }
 }
 
-#connectModal {
-  background: url('/assets/bg.jpg');
-
-  .modal-header {
-    h3 {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-weight: 100;
-      font-size: 54px;
-    }
-    text-align: center;
-  }
-
-  .modal-body {
-    text-align: center;
-    p {
-      color: #777;
-      font-weight: 200;
-      font-size: 18px;
-    }
-  }
-}
-
-.tweetForm {
-  textarea {
-    margin-bottom: 20px;
-    margin-top: 12px;
-    @include radius(6px);
-    resize: none;
-    height: 44px;
-    padding: 6px;
-    width: 268px;
-  }
-}
-
 .main {
   width: 100%;
-  min-height: 421px;
+  min-height: 322px;
   background: url('/assets/main-bg.png') repeat-x; 
   padding-top: 2px;
   
   .sidebar {
     .chat {
       .input {
+        height: 43px;
         margin-top: 8px;
 
         input {
@@ -58,12 +24,11 @@
         }
 
         input[type=text] {
-          width: 191px;
+          width: 206px;
         }
 
         .submit {
           margin-left: 4px;
-          padding: 8px 6px;
         }
       }
 
@@ -73,8 +38,8 @@
         list-style: none;
         overflow-y: scroll;
         margin-top: 10px;
-        height: 320px;
-        background: url("/assets/bg2.jpg");
+        height: 230px;
+        background: white;
         @include radius(6px);
 
         li {
@@ -138,11 +103,10 @@
 
     .publish {
       position: absolute;
-      top: 60px;
+      top: 10px;
       left: 100px;
       width: 450px;
       height: 380px;
-      background: url('/assets/bg.jpg');
       z-index: 20;
       @include radius(6px);
       @include drop-shadow(0px 2px 2px 1px rgba(0,0,0,.4));
@@ -208,7 +172,7 @@
       }
       width: 312px;
       position: absolute;
-      top: 84px;
+      top: 10px;
 
       .video {
         width: 312px;

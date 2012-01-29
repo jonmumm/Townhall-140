@@ -3,6 +3,7 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
     $(document).bind 'startShow', $.proxy @onStartShow, @
     $(document).bind 'stopShow', $.proxy @onStopShow, @
     $(document).bind 'joinShow', $.proxy @onJoinShow, @
+    $(document).bind 'enterShow', $.proxy @onEnterShow, @
     $(document).bind 'leaveShow', $.proxy @onLeaveShow, @
     $(document).bind 'remove', $.proxy @onRemove, @
 
@@ -17,17 +18,24 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
       id: app.get("session").connection.data
 
   onStopShow: ->
-    # TODO
+    session = app.get("session")
+    @each (participant) =>
+      session.forceUnpublish participant.get('stream')
 
   onJoinShow: ->
+    if app.get('role') isnt "publisher"
+      $(document).trigger 'loginRequired'
+    else
+      $(document).trigger 'enterQuestion'
+
+  onEnterShow: ->
     if app.get('role') is "publisher"
       @add new TownHall140.Models.Participant
         id: app.get("session").connection.data
-    else
-      $(document).trigger 'loginRequired'
 
   onLeaveShow: ->
-    # TODO
+    participant = @get app.get('session').connection.data
+    app.get('session').forceUnpublish participant.get('publisher')
 
   onSessionConnect: (event) ->
     for stream in event.streams
@@ -43,7 +51,7 @@ TownHall140.Collections.ParticipantCollection = Backbone.Collection.extend
 
   onRemove: (event, participant) ->
     session = app.get('session')
-    session.forceUnpublish participant.id
+    session.forceUnpublish participant.get('stream')
 
   addParticipant: (stream) ->
     if stream.connection.connectionId isnt app.get('session').connection.connectionId

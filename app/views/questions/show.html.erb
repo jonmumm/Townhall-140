@@ -1,0 +1,18 @@
+<% title "Question" %>
+
+<p>
+  <strong>Body:</strong>
+  <%= @question.body %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @question.user_id %>
+</p>
+<p>
+  <strong>Show:</strong>
+  <%= @question.show_id %>
+</p>
+
+<p>
+  <%= link_to "View All", questions_path %>
+</p>

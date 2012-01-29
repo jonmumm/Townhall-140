@@ -36,7 +36,9 @@ TownHall140.Views.ParticipantView = Backbone.View.extend
         subscriber: subscriber
       @setAudioSubscribe()
     else
-      app.get('session').publish "videoContainer"
+      publisher = app.get('session').publish "videoContainer"
+      @model.set
+        publisher: publisher
 
   setAudioSubscribe: ->
     subscriber = @model.get 'subscriber'

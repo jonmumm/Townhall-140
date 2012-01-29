@@ -15,13 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-=begin
   def after_sign_in_path_for(resource)
-    if session["return_path"]
-      session["return_path"]
-    else
-      root
-    end
+    session["return_path"]
   end
-=end
 end
