@@ -63,8 +63,7 @@
       <h3>Login</h3>
     </div>
     <div class="modal-body">
-      <%= link_to content_tag(:span, "Sign in with Facebook"), signin_path(:facebook), :class => "zocial facebook" %>
-      <%= link_to content_tag(:span, "Sign in with Twitter"), signin_path(:twitter), :class => "zocial twitter" %>
+      <%= render 'devise/login' %>
     </div>
     <div class="modal-footer">
       <a href="#" class="btn">Cancel</a>
