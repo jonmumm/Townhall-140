@@ -83,3 +83,7 @@ a:hover {
   background-color: #00416a;
   @include background-image(linear-gradient(#005d89, #00416a));
 }
+
+#loginModal {
+  width: auto;
+}

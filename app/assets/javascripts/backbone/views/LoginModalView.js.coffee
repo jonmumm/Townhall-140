@@ -3,6 +3,12 @@ TownHall140.Views.LoginModalView = Backbone.View.extend
     $(document).bind 'loginRequired', $.proxy @onLoginRequire, @
     @el.bind 'hide', @onModalHide
 
+  events:
+    "click a": "onCancel"
+
+  onCancel: ->
+    @el.modal('hide')
+
   onLoginRequire: ->
     @render()
 

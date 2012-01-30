@@ -10,7 +10,10 @@ TownHall140.Views.QuestionModalView = Backbone.View.extend
 
   onSubmitClick: ->
     @postMessage $("input", @el).val()
-    console.log('submit')
+
+  onInputKey: (event) ->
+    if event.keyCode == 13
+      @postMessage $("input", @el).val()
 
   onModalHide: ->
     $(document).trigger 'joinCancelled'
@@ -19,3 +22,22 @@ TownHall140.Views.QuestionModalView = Backbone.View.extend
     @el.modal
       backdrop: true
       show: true
+
+  postMessage: (message) =>
+    show_id = app.get('show').id
+
+    if message isnt "" and not submitting
+      submitting = true
+      $.ajax
+        type: "post"
+        url: "/shows/#{show_id}/questions"
+        data:
+          body: message
+        success: (response) =>
+          $("#questionModal").modal('hide')
+          $(document).trigger 'enterShow'
+          submitting = false
+        error: (error) =>
+          submitting = false
+          # Show some error  
+

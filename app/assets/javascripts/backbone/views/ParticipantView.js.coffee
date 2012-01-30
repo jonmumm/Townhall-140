@@ -2,6 +2,7 @@ TownHall140.Views.ParticipantView = Backbone.View.extend
   initialize: ->
     @model.bind 'change:id', $.proxy @onIdChange, @
     @model.bind 'change:state', $.proxy @onStateChange, @
+    @model.get('question').bind 'change', $.proxy @onQuestionChange, @
 
   template: JST["backbone/templates/participant"]
 
@@ -26,6 +27,9 @@ TownHall140.Views.ParticipantView = Backbone.View.extend
     @el.removeClass()
     @el.addClass(model.get('state'))
     @setAudioSubscribe()
+
+  onQuestionChange: (model) ->
+    $(".question", @el).html model.get('body')
 
   render: ->
     @el.html @template

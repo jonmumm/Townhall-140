@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_return_path
 
   def store_return_path
-    if request.get? and request.format.html? and !request.xhr? and !devise_controller?
+    if request.get? and request.format.html? and !request.xhr? and !devise_controller? and (request["controller"] != "authentications")
       session["return_path"] = request.fullpath
     end
   end

@@ -1,6 +1,16 @@
 TownHall140.Models.Participant = Backbone.Model.extend
   initialize: ->
     app.get('session').addEventListener 'streamCreated', $.proxy @onStreamCreate, @
+    @set { question: new TownHall140.Models.Question }
+    $.ajax
+      url: "/shows/#{app.get('show').id}/questions/#{@id}/latest"
+      dataType: "json"
+      success: (response) =>
+        if response
+          @get('question').set response
+      error: (error) =>
+        # TODO Error getting question
+
 
   defaults:
     state: "publish"

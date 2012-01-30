@@ -20,9 +20,12 @@
 </script>
 <% end %>
 
+<div class="container">
+  <div class="panel"> </div>
+</div>
 <% if @role == "moderator" %>
   <div class="main moderator">
-  <% else %>
+<% else %>
     <div class="main non-moderator">
     <% end %>
     <div class="container">
@@ -37,13 +40,11 @@
             </div>
             <div class="chat"></div>
           </div>
-          <div class="panel">
-          </div>
         </div>
         <div class="span11 stage">
           <div class="host placeholder participant">
             <div class="participant-wrapper">
-              <h3>Placeholder</h3>
+              <h3><%= @show.user.full_name %></h3>
               <div class="video"></div>
             </div>
           </div>
@@ -53,6 +54,132 @@
               <div class="video"></div>
             </div>
           </div>
+
+<!--
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="queue">
+  <div class="participant">
+    <div class="participant-wrapper">
+      <h3>Press <strong>Allow</strong></h3>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+      <div class="question">
+        What is your favorite color? Ben parr is sitinky and fat? Lorem ipsum.
+      </div>
+      <div class="buttons">
+        <div class="buttons-wrapper">
+          <a href="javascript:void(0)" class="btn danger remove">Remove</a>
+          <a href="javascript:void(0)" class="btn primary tostage">Move to Stage</a>
+          <a href="javascript:void(0)" class="btn primary offstage">Move off Stage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
         </div>
       </div>
     </div>
@@ -72,7 +199,7 @@
 
   <div id="questionModal" class="modal hide fade">
     <div class="modal-header">
-      <h3>Enter your question</h3>
+      <h3>What are you going to ask?</h3>
     </div>
     <div class="modal-body">
       <div class="input">
