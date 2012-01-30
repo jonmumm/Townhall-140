@@ -52,5 +52,3 @@ gem 'meta_search',    '>= 1.1.0.pre'
 
 gem 'opentok', :git => "git@github.com:jonmumm/opentok.git"
 gem 'pusher'
-gem 'ruby-debug-base19', "0.11.24"
-gem 'ruby-debug19', "0.11.6"
