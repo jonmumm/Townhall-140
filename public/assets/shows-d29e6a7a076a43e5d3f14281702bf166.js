@@ -1,0 +1,1 @@
+((function(){jQuery(function(){var a;return window.app=new TownHall140.Models.App(app_config),app.setup(),a=new TownHall140.Views.AppView({model:app,el:$(".app")}),a.render(),app.start()})})).call(this)

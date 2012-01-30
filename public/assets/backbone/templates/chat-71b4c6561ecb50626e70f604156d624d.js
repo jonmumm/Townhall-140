@@ -1,0 +1,1 @@
+((function(){this.JST||(this.JST={}),this.JST["backbone/templates/chat"]=function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments)};with(obj||{})__p.push("<li><span>",user.first_name," ",user.last_name,":</span> ",message,"</li>\n");return __p.join("")}})).call(this)
