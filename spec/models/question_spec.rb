@@ -21,3 +21,5 @@ describe Question do
     @question.votes.reload.count.should == 1
   end
 end
+
+
