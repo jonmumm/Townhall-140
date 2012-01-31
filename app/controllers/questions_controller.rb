@@ -23,4 +23,14 @@ class QuestionsController < ApplicationController
 
     render :json => @questions
   end
+
+
+  # Vote is too ancillary to deserve a full controller
+  
+  def vote
+    @question = Question.find params[:id]
+    @question.vote_up(request.remote_ip)
+    render head: :ok
+  end
+
 end
