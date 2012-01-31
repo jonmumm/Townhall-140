@@ -27,6 +27,7 @@ group :development, :test do
 
   gem 'nifty-generators'
   gem 'database_cleaner'
+  gem 'therubyracer'
 end
 
 group :assets do
