@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe QuestionsController do
-  fixtures :all
   render_views
 
   it "show action should render show template" do
