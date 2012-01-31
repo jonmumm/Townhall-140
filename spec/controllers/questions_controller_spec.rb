@@ -3,6 +3,10 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe QuestionsController do
   render_views
 
+  before do
+    @question = Factory.create :question
+  end
+
   it "show action should render show template" do
     get :show, :id => Question.first
     response.should render_template(:show)
