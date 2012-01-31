@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :chats
   has_many :questions
+  has_many :votes
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
