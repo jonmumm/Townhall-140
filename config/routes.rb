@@ -10,7 +10,7 @@ TownHall140::Application.routes.draw do
   get "/shows/:show_id/questions/:user_id/latest" => "questions#latest"
 
   resources :questions
-  post "question/:id/votes" => "questions#vote"
+  post "question/:id/votes" => "questions#vote_up"
 
   resources :authentications
   resources :subscribers

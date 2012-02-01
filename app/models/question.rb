@@ -6,4 +6,9 @@ class Question < ActiveRecord::Base
   validates :body, :show_id, :presence => true
 
   attr_accessible :body, :user_id, :show_id
+
+  def vote_up(opts)
+    # opts can include :ip or :user_id
+    votes.create opts  # can fail silently, not a big deal
+  end
 end

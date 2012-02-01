@@ -26,12 +26,12 @@ class QuestionsController < ApplicationController
   end
 
 
-  # Vote is too ancillary to deserve a full controller
+  # Vote is ancillary to question, does not need a full controller
   
-  def vote
+  def vote_up
     @question = Question.find params[:id]
-    @question.vote_up(request.remote_ip)
-    render head: :ok
+    @question.vote_up(ip: request.remote_ip, user_id: (current_user && current_user.id))
+    head :ok
   end
 
 end

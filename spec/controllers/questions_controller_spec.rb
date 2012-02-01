@@ -21,7 +21,12 @@ describe QuestionsController do
     Question.last.ip.should match /\d+.\d+.\d+.\d+/
   end
 
-  it "should allow anonymous users to vote up a question" do
+  it "should allow anonymous users to vote up a question and record the remote ip" do
+    expect {
+      post :vote_up, id: @question.id
+    }.to change(Vote, :count).by(1)
+    Vote.last.ip.should_not be nil
+    Vote.last.ip.should match /\d+.\d+.\d+.\d+/
   end
 
   it "create action should redirect when model is valid" do
