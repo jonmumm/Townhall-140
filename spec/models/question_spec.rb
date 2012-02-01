@@ -21,6 +21,13 @@ describe Question do
     @question.votes.create ip:'0.0.0.0'
     @question.votes.reload.count.should == 2
   end
+
+  it "should counter cache vote counts" do
+    expect { 
+      @question.votes.create! ip:'0.0.0.1'
+      @question.reload
+    }.to change(@question, :votes_count).by(1) 
+  end
 end
 
 

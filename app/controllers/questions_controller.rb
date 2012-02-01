@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.where(:show_id => params[:show_id])
 
-    render :json => @questions
+    render :json => @questions.order("votes_count desc")
   end
 
 

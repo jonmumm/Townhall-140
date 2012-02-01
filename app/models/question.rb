@@ -12,7 +12,4 @@ class Question < ActiveRecord::Base
     votes.create opts  # can fail silently, not a big deal
   end
 
-  def as_json(opts={})
-    super(opts).merge(votes: votes.count)
-  end
 end

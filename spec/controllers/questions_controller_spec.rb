@@ -39,11 +39,13 @@ describe QuestionsController do
     Vote.last.user.should == @user
   end
 
-  it "should return a list of questions with vote counts" do
+  it "should return a list of questions with vote counts order by votes_count desc" do
     @question.vote_up ip:'0.0.0.1'
+    q2 = Factory.create(:question) # will have votes_count of 0
+    @question.reload
     get :index, show_id:@question.show_id
     JSON.parse(response.body)[0]["body"].should == @question.body
-    JSON.parse(response.body)[0]["votes"].should == @question.votes.count
+    JSON.parse(response.body)[0]["votes_count"].should == @question.votes_count
   end
 
 
