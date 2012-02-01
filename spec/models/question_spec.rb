@@ -4,7 +4,6 @@ describe Question do
   before :each do 
     @user = Factory.create(:user)
     @question = Factory.create :question, user:@user
-
   end
 
   it "should be valid" do

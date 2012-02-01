@@ -21,6 +21,9 @@ describe QuestionsController do
     Question.last.ip.should match /\d+.\d+.\d+.\d+/
   end
 
+  it "should allow anonymous users to vote up a question" do
+  end
+
   it "create action should redirect when model is valid" do
     pending
     Question.any_instance.stubs(:valid?).returns(true)
