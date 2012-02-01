@@ -56,6 +56,27 @@
       }
     }
   }
+  .questions {
+      margin: 0;
+      padding: 6px 9px;
+      list-style: none;
+      overflow-y: scroll;
+      margin-top: 10px;
+      height: 248px;
+      background: white;
+      @include radius(6px);
+
+      li {
+        span {
+          font-weight: bold;
+          color: #666;
+        }
+        margin-bottom: 2px;
+      }
+
+
+  }
+
 
   .stage {
     position: relative;

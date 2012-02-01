@@ -7,11 +7,16 @@ TownHall140.Views.AppView = Backbone.View.extend
     loginView = new TownHall140.Views.LoginModalView
       el: $("#loginModal")
 
-    questionView = new TownHall140.Views.QuestionModalView
+    questionModalView = new TownHall140.Views.QuestionModalView
       el: $("#questionModal")
 
-    # TESTING
-    questionView.render()
+    # TESTING TODO hook me up to a button!
+    # questionModalView.render()
+
+    questionsView = new TownHall140.Views.QuestionsView
+      el: $("#questions"),
+      collection: app.get('questions')
+    questionsView.render()
 
     chatVIew = new TownHall140.Views.ChatView
       el: $(".chat")
