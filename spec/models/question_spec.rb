@@ -28,6 +28,16 @@ describe Question do
       @question.reload
     }.to change(@question, :votes_count).by(1) 
   end
+
+  it "should not have more than one vote per ip address" do
+    @question.votes.create! ip:'0.0.0.1'
+    @question.reload
+    expect { 
+      @question.votes.create ip:'0.0.0.1'
+      @question.reload
+    }.to change(@question, :votes_count).by(0) 
+
+  end
 end
 
 

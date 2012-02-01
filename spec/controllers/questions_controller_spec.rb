@@ -39,7 +39,7 @@ describe QuestionsController do
     Vote.last.user.should == @user
   end
 
-  it "should return a list of questions with vote counts order by votes_count desc" do
+  it "should return a list of questions with vote counts ordered by votes_count desc" do
     @question.vote_up ip:'0.0.0.1'
     q2 = Factory.create(:question) # will have votes_count of 0
     @question.reload
