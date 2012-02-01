@@ -15,7 +15,8 @@ TownHall140.Views.AppView = Backbone.View.extend
 
     questionsView = new TownHall140.Views.QuestionsView
       el: $("#questions"),
-      collection: app.get('questions')
+      collection: app.get('questions'),
+      model: TownHall140.Models.Question
     questionsView.render()
 
     chatVIew = new TownHall140.Views.ChatView
