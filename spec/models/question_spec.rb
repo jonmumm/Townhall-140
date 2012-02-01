@@ -3,7 +3,8 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Question do
   before :each do 
     @user = Factory.create(:user)
-    @question = Factory.create :question, user:@user
+    @show = Factory.create :show
+    @question = Factory.create :question, user:@user, show:@show
   end
 
   it "may belong to a user" do
@@ -40,6 +41,16 @@ describe Question do
 
   it "sets author field from user name of an associated user" do
     @question.author.should == "#{@user.first_name} #{@user.last_name[0]}"
+  end
+
+  it "should have rank calculated from votes" do
+    @question.votes.create! ip:'0.0.0.1'
+    q2 = Factory.create :question
+    @question.rank.should == 1
+    q2.rank.should == 2
+    3.times {|n| q2.votes.create! ip:"0.0.0.#{n}" }
+    q2.rank.should == 1
+    @question.rank.should == 2
   end
 
 end

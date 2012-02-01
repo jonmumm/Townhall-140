@@ -9,6 +9,12 @@ class Question < ActiveRecord::Base
 
   attr_accessible :body, :user_id, :show_id
 
+  def rank
+    # not the most efficient way, but prob ok for low n
+    return unless show
+    show.questions.order("votes_count desc").index(self) + 1
+  end
+
   def vote_up(opts)
     # opts can include :ip or :user_id
     votes.create opts  # can fail silently, not a big deal
