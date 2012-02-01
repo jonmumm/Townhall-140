@@ -4,9 +4,8 @@ class QuestionsController < ApplicationController
     @question = Question.new :show_id => params[:show_id], :body => params[:body]
     if current_user
       @question.user_id = current_user.id
-    else
-      @question.ip = request.remote_ip
     end
+    @question.ip = request.remote_ip
     if @question.save!
       render :json => @question, :status => :created
     else

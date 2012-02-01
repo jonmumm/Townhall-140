@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe QuestionsController do
+
   render_views
 
   before do

@@ -19,6 +19,8 @@ describe Question do
     @question.votes.count.should == 0
     @question.votes.create user:@user
     @question.votes.reload.count.should == 1
+    @question.votes.create ip:'0.0.0.0'
+    @question.votes.reload.count.should == 2
   end
 end
 
