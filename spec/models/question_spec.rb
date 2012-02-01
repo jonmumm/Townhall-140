@@ -7,8 +7,7 @@ describe Question do
   end
 
   it "may belong to a user" do
-    @question.user.should == @user
-  end
+    @question.user.should == @user end
 
   it "can have votes" do
     @question.votes.count.should == 0
@@ -34,9 +33,13 @@ describe Question do
     }.to change(@question, :votes_count).by(0) 
   end
   
-  it "may have a author string (may be submitted while not logged in)" do
-    q = Factory.create :question, author: "Monica L"
+  it "has a writable author string field" do
+    q = Factory.create :question, author: "Monica L", user:nil
     q.author.should == "Monica L"
+  end
+
+  it "sets author field from user name of an associated user" do
+    @question.author.should == "#{@user.first_name} #{@user.last_name[0]}"
   end
 
 end
