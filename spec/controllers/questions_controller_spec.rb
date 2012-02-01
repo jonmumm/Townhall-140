@@ -39,6 +39,16 @@ describe QuestionsController do
     Vote.last.user.should == @user
   end
 
+  it "should return a list of questions with vote counts" do
+    @question.vote_up ip:'0.0.0.1'
+    get :index, show_id:@question.show_id
+    JSON.parse(response.body)[0]["body"].should == @question.body
+    JSON.parse(response.body)[0]["votes"].should == @question.votes.count
+  end
+
+
+
+
 
 
   it "create action should redirect when model is valid" do
