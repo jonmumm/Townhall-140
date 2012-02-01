@@ -1,3 +1,3 @@
-TownHall140.Models.QuestionCollection = Backbone.Collection.extend
+TownHall140.Collections.QuestionCollection = Backbone.Collection.extend
   initialize: ->
 
