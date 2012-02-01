@@ -7,7 +7,17 @@ describe QuestionsController do
     @question = Factory.create :question
   end
 
-  it "create action should render new template when model is invalid" do
+  it "should let anonymous user submit a new question" do
+    get :new
+    response.should render_template(:new)
+  end
+
+  it "should let anonymous user create a new question and record the remote ip" do
+    expect { 
+      post :create, {show_id: 1, body: 'hello'}
+    }.to change(Question, :count).by(1) 
+    Question.last.ip.should_not be nil
+    Question.last.ip.should match /\d+.\d+.\d+.\d+/
   end
 
   it "create action should redirect when model is valid" do

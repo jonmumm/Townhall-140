@@ -1,14 +1,16 @@
 class QuestionsController < ApplicationController
+
   def create
+    @question = Question.new :show_id => params[:show_id], :body => params[:body]
     if current_user
-      @question = Question.new :user_id => current_user.id, :show_id => params[:show_id], :body => params[:body]
-      if @question.save
-        render :json => @question, :status => :created
-      else
-        render :json => @question.errors, :status => :unprocessable_entity
-      end
+      @question.user_id = current_user.id
     else
-      render :json => { :message => "User does not have access to ask a question. Login." }, :status => :unauthorized
+      @question.ip = request.remote_ip
+    end
+    if @question.save!
+      render :json => @question, :status => :created
+    else
+      render :json => @question.errors, :status => :unprocessable_entity
     end
   end
 

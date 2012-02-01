@@ -1,5 +1,4 @@
 TownHall140::Application.routes.draw do
-  resources :questions
 
   ActiveAdmin.routes(self)
 
@@ -10,6 +9,7 @@ TownHall140::Application.routes.draw do
 
   get "/shows/:show_id/questions/:user_id/latest" => "questions#latest"
 
+  resources :questions
   post "question/:id/votes" => "questions#vote"
 
   resources :authentications
