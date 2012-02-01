@@ -6,11 +6,7 @@ describe Question do
     @question = Factory.create :question, user:@user
   end
 
-  it "should be valid" do
-    @question.should be_valid
-  end
-
-  it "should belong to a user" do
+  it "may belong to a user" do
     @question.user.should == @user
   end
 
@@ -36,8 +32,13 @@ describe Question do
       @question.votes.create ip:'0.0.0.1'
       @question.reload
     }.to change(@question, :votes_count).by(0) 
-
   end
+  
+  it "may have a author string (may be submitted while not logged in)" do
+    q = Factory.create :question, author: "Monica L"
+    q.author.should == "Monica L"
+  end
+
 end
 
 
