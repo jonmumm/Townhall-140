@@ -1,7 +1,8 @@
 TownHall140.Views.QuestionModalView = Backbone.View.extend
   initialize: ->
     $(document).bind 'enterQuestion', $.proxy @onEnterQuestion, @
-    $(".submit", @el).click $.proxy @onSubmitClick, @
+    $(".askQuestionBtn", @el).click $.proxy @onSubmitClick, @
+    $(".justWatchBtn", @el).click $.proxy @onJustWatchClick, @
     $("input", @el).keypress $.proxy @onInputKey, @
     @el.bind 'hide', @onModalHide
 
@@ -10,6 +11,12 @@ TownHall140.Views.QuestionModalView = Backbone.View.extend
 
   onSubmitClick: ->
     @postMessage $("input", @el).val()
+
+  onJustWatchClick: ->
+    $(document).trigger 'startShow'
+    $(".justWatchBtn").attr 'disabled', 'disabled'
+    # TODO FIX ME
+    $("#questionModal").modal('hide')
 
   onInputKey: (event) ->
     if event.keyCode == 13
